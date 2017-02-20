@@ -1,0 +1,12 @@
+//------------------------------------------------
+// pCustomLogger config block
+
+ProcessConfig = pCustomLogger
+{
+   AppTick   = 4
+   CommsTick = 4
+
+   PATH=/home/tonywelte/
+   FILE=name=Tony,watch=TEST1/TEST2/TRUC
+   FILE=name=Stark,watch=TEST2/TRUC
+}

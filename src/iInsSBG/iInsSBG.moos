@@ -1,0 +1,12 @@
+//------------------------------------------------
+// iInsSBG config block
+
+ProcessConfig = iInsSBG
+{
+   AppTick   = 25
+   CommsTick = 25
+
+   UART_PORT = /dev/ttyUSB2
+   UART_BAUD_RATE = 115200
+}
+

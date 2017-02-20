@@ -1,0 +1,2 @@
+compilation : dans project/unix executez "./build.sh SBG_PLATFORM_LITTLE_ENDIAN"
+option de cross-compilation (voir le script : CC & AR)

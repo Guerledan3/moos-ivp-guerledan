@@ -1,0 +1,81 @@
+## Recuperation du temps de debut d enregistrement 
+
+awk '$2=="LOGSTART"{print $3}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_Debut_enregistrement.txt
+
+## Recuperation des sondes avec le temps 
+
+awk '$2=="Sounder_RANGE" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_sondes_nonTraitees.txt
+
+## Recuperation des trames NMEA et traitement
+
+# On recupere les trames NMEA avec le temps d arrivee
+
+awk '$2=="GPS_RAW_NMEA" && NF==4 {printf("%s,%s\n", $1,$4)}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_GPS_NMEA.txt
+
+# On recupere le mode GPS
+
+awk -F, '$2=="$GPGGA"{print $1,$8}' Donnees_triees/20161910_1519_GPS_NMEA.txt > Donnees_triees/20161910_1519_Mode_GPS.txt 
+
+## Recuperation Latitude Longitude Hauteur avec le temps depuis la SBG (linearisation des donnees abherantes par rapport au GPS)
+## EN degre et en metre
+
+##Depuis la SBG
+# On recupere la latitude 
+
+awk '$2=="NAV_LAT" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_latitude_SVG.txt
+
+# On recupere la longitude
+
+awk '$2=="NAV_LONG" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_longitude_SVG.txt
+
+# On recupere la hauteur de l antenne
+
+awk '$2=="NAV_DEPTH" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_hauteur_SVG.txt
+
+# On met les donnes en colonnes _ Temps Latitude Longitude Hauteur 
+
+join Donnees_triees/20161910_1519_latitude_SVG.txt Donnees_triees/20161910_1519_longitude_SVG.txt > Donnees_triees/20161910_1519_intermediaire_Tps_Lat_Long_SVG.txt
+join Donnees_triees/20161910_1519_intermediaire_Tps_Lat_Long_SVG.txt Donnees_triees/20161910_1519_hauteur_SVG.txt > Donnees_triees/20161910_1519_TempsLatLongH_SVG.txt
+
+## Depuis le GPS
+# On recupere la latitude 
+
+awk '$2=="GPS_LAT" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_latitude_GPS.txt
+
+# On recupere la longitude
+
+awk '$2=="GPS_LONG" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_longitude_GPS.txt
+
+# On recupere la hauteur de l antenne
+
+awk -F, '$2=="$GPGGA"{print $1,$11}' Donnees_triees/20161910_1519_GPS_NMEA.txt > Donnees_triees/20161910_1519_hauteur_GPS.txt
+
+# On met les donnes en colonnes _ Temps Latitude Longitude Hauteur 
+
+join Donnees_triees/20161910_1519_latitude_GPS.txt Donnees_triees/20161910_1519_longitude_GPS.txt > Donnees_triees/20161910_1519_Tps_Lat_Long_GPS.txt
+
+## Recuperation de l'attitude du porteur en degre
+
+# On recupere le roulis
+
+awk '$2=="NAV_ROLL" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_roulis_SVG.txt
+
+# On recupere le tanguage
+
+awk '$2=="NAV_PITCH" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_tanguage_SVG.txt
+
+# On recupere le cap
+
+awk '$2=="NAV_YAW" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_cap_SVG.txt
+
+# On recupere le cap depuis le GPS
+
+awk '$2=="GPS_HEADING" {print $1,$4}' LogMoos_19_10_2016_____15_19_22.alog > Donnees_triees/20161910_1519_cap_GPS.txt
+
+# On met les donnes en colonnes _ Temps Roulis Tanguage CAp pour la SVG 
+
+join Donnees_triees/20161910_1519_roulis_SVG.txt Donnees_triees/20161910_1519_tanguage_SVG.txt > Donnees_triees/20161910_1519_intermediaire_Tps_Rou_Tan_SVG.txt
+join Donnees_triees/20161910_1519_intermediaire_Tps_Rou_Tan_SVG.txt Donnees_triees/20161910_1519_cap_GPS.txt > Donnees_triees/20161910_1519_TempsRoulisTanguageCap_SVG.txt
+
+
+

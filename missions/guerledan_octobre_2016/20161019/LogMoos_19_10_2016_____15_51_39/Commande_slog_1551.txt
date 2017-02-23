@@ -1,0 +1,15 @@
+# Recuperation des donnees des fichiers Slog pour avoir les sondes en même temps que les donnees SVG 
+
+# On enleve toutes les lignes commencant par %%
+
+grep -i -v %% LogMoos_19_10_2016_____15_51_39.slog > Donnees_slog_20161910_1551/20161910_1551_sondesPOS_etape1.txt
+
+# On ne reprend que les colonnes utiles Temps, Yaw, Pitch, Roll, Height, Lat, Long, Sonde
+
+awk '{printf ("%-10s %-12s %-12s %-12s %-10s %-9s %-10s %-6s\n",$1,$3,$4,$5,$6,$7,$8,$9)}' Donnees_slog_20161910_1551/20161910_1551_sondesPOS_etape1.txt > Donnees_slog_20161910_1551/20161910_1551_sondesPOS_etape2.txt
+
+# On enleve toutes le slignes contenant Nan
+
+grep -i -v nan Donnees_slog_20161910_1551/20161910_1551_sondesPOS_etape2.txt > Donnees_slog_20161910_1551/20161910_1551_sondesPOS.txt
+
+

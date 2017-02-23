@@ -1,0 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_25_11_2016_____09_27_44/LogMoos_25_11_2016_____09_27_44.alog
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1480062463.66
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0.790           Sounder_RANGE        iSounder        -1.00000     
+1.298           Sounder_RANGE        iSounder        -1.00000     
+1.653           INS_year             iInsSBG         0.00000      
+1.653           INS_month            iInsSBG         0.00000      
+1.653           INS_day              iInsSBG         0.00000      
+1.653           INS_hour             iInsSBG         -0.00000     
+1.653           INS_minute           iInsSBG         0.00000      
+1.653           INS_second           iInsSBG         0.00000      
+1.653           INS_nanoSecond       iInsSBG         0.00000      
+1.653           INS_gpsTimeOfWeek    iInsSBG         0.00000      
+1.803           Sounder_RANGE        iSounder        0.00000      
+2.096           Sounder_RANGE        iSounder        0.00000      

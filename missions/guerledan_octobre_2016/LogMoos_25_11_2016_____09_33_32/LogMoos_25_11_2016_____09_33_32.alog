@@ -1,0 +1,690 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_25_11_2016_____09_33_32/LogMoos_25_11_2016_____09_33_32.alog
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1480062811.94
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0.357           INS_year             iInsSBG         0.00000      
+0.357           INS_month            iInsSBG         0.00000      
+0.357           INS_day              iInsSBG         0.00000      
+0.357           INS_hour             iInsSBG         -0.00010     
+0.357           INS_minute           iInsSBG         0.00000      
+0.357           INS_second           iInsSBG         0.00000      
+0.357           INS_nanoSecond       iInsSBG         0.00000      
+0.357           INS_gpsTimeOfWeek    iInsSBG         0.00000      
+1.482           INS_year             iInsSBG         2015.00000   
+1.482           INS_month            iInsSBG         5.00000      
+1.482           INS_day              iInsSBG         1.00000      
+1.482           INS_hour             iInsSBG         0.00000      
+1.482           INS_minute           iInsSBG         0.00000      
+1.482           INS_second           iInsSBG         0.00000      
+1.482           INS_nanoSecond       iInsSBG         5000000.00000 
+1.482           INS_gpsTimeOfWeek    iInsSBG         5.00000      
+1.522           INS_EULER            iInsSBG         -0.701 -0.154 -0.000 
+1.522           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.562           INS_EULER            iInsSBG         -0.701 -0.154 -0.000 
+1.562           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.602           INS_EULER            iInsSBG         -0.701 -0.154 -0.000 
+1.602           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.643           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.643           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.683           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.683           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.723           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.723           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.763           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.763           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.804           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.804           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.844           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.844           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.884           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.884           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.924           INS_EULER            iInsSBG         -0.701 -0.154 -0.001 
+1.924           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+1.964           INS_EULER            iInsSBG         -0.701 -0.154 -0.002 
+1.964           INS_NAV              iInsSBG         48.868801 2.157700 30.00  
+2.004           INS_EULER            iInsSBG         -0.701 -0.155 -0.002 
+2.004           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.045           INS_EULER            iInsSBG         -0.702 -0.155 -0.002 
+2.045           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.085           INS_EULER            iInsSBG         -0.702 -0.155 -0.002 
+2.085           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.125           INS_EULER            iInsSBG         -0.702 -0.155 -0.002 
+2.125           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.165           INS_EULER            iInsSBG         -0.702 -0.155 -0.002 
+2.165           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.205           INS_EULER            iInsSBG         -0.702 -0.155 -0.002 
+2.205           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.245           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.245           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.286           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.286           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.326           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.326           INS_NAV              iInsSBG         48.868801 2.157700 29.99  
+2.366           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.366           INS_NAV              iInsSBG         48.868801 2.157700 29.98  
+2.406           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.406           INS_NAV              iInsSBG         48.868801 2.157700 29.98  
+2.446           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.446           INS_NAV              iInsSBG         48.868801 2.157700 29.98  
+2.486           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.486           INS_NAV              iInsSBG         48.868801 2.157700 29.98  
+2.486           INS_year             iInsSBG         2015.00000   
+2.486           INS_month            iInsSBG         5.00000      
+2.486           INS_day              iInsSBG         1.00000      
+2.486           INS_hour             iInsSBG         0.00000      
+2.486           INS_minute           iInsSBG         0.00000      
+2.486           INS_second           iInsSBG         1.00000      
+2.486           INS_nanoSecond       iInsSBG         0.00000      
+2.486           INS_gpsTimeOfWeek    iInsSBG         1000.00000   
+2.527           INS_EULER            iInsSBG         -0.702 -0.155 -0.003 
+2.527           INS_NAV              iInsSBG         48.868801 2.157700 29.98  
+2.567           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.567           INS_NAV              iInsSBG         48.868801 2.157700 29.98  
+2.607           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.607           INS_NAV              iInsSBG         48.868801 2.157700 29.97  
+2.647           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.647           INS_NAV              iInsSBG         48.868801 2.157700 29.97  
+2.687           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.687           INS_NAV              iInsSBG         48.868801 2.157700 29.97  
+2.728           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.728           INS_NAV              iInsSBG         48.868801 2.157700 29.97  
+2.768           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.768           INS_NAV              iInsSBG         48.868801 2.157700 29.97  
+2.808           INS_EULER            iInsSBG         -0.702 -0.156 -0.004 
+2.808           INS_NAV              iInsSBG         48.868801 2.157701 29.96  
+2.848           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+2.848           INS_NAV              iInsSBG         48.868805 2.157701 29.96  
+2.888           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+2.888           INS_NAV              iInsSBG         48.868805 2.157701 29.96  
+2.929           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+2.929           INS_NAV              iInsSBG         48.868805 2.157701 29.95  
+2.969           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+2.969           INS_NAV              iInsSBG         48.868805 2.157701 29.95  
+3.009           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+3.009           INS_NAV              iInsSBG         48.868805 2.157701 29.95  
+3.049           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+3.049           INS_NAV              iInsSBG         48.868805 2.157701 29.95  
+3.089           INS_EULER            iInsSBG         -0.702 -0.156 -0.005 
+3.089           INS_NAV              iInsSBG         48.868805 2.157701 29.94  
+3.130           INS_EULER            iInsSBG         -0.702 -0.156 -0.006 
+3.130           INS_NAV              iInsSBG         48.868805 2.157701 29.94  
+3.170           INS_EULER            iInsSBG         -0.702 -0.157 -0.006 
+3.170           INS_NAV              iInsSBG         48.868805 2.157701 29.94  
+3.210           INS_EULER            iInsSBG         -0.702 -0.157 -0.006 
+3.210           INS_NAV              iInsSBG         48.868805 2.157701 29.93  
+3.250           INS_EULER            iInsSBG         -0.702 -0.157 -0.006 
+3.250           INS_NAV              iInsSBG         48.868805 2.157701 29.93  
+3.291           INS_EULER            iInsSBG         -0.702 -0.157 -0.006 
+3.291           INS_NAV              iInsSBG         48.868805 2.157701 29.93  
+3.331           INS_EULER            iInsSBG         -0.704 -0.113 -0.015 
+3.331           INS_NAV              iInsSBG         48.868805 2.157701 29.92  
+3.371           INS_EULER            iInsSBG         -0.705 -0.106 -0.028 
+3.371           INS_NAV              iInsSBG         48.868805 2.157701 29.92  
+3.411           INS_EULER            iInsSBG         -0.706 -0.104 -0.041 
+3.411           INS_NAV              iInsSBG         48.868805 2.157701 29.92  
+3.451           INS_EULER            iInsSBG         -0.706 -0.104 -0.043 
+3.451           INS_NAV              iInsSBG         48.868805 2.157701 29.91  
+3.491           INS_EULER            iInsSBG         -0.707 -0.105 -0.052 
+3.491           INS_NAV              iInsSBG         48.868805 2.157701 29.91  
+3.491           INS_year             iInsSBG         2015.00000   
+3.491           INS_month            iInsSBG         5.00000      
+3.491           INS_day              iInsSBG         1.00000      
+3.491           INS_hour             iInsSBG         0.00000      
+3.491           INS_minute           iInsSBG         0.00000      
+3.491           INS_second           iInsSBG         2.00000      
+3.491           INS_nanoSecond       iInsSBG         0.00000      
+3.491           INS_gpsTimeOfWeek    iInsSBG         2000.00000   
+3.532           INS_EULER            iInsSBG         -0.707 -0.106 -0.053 
+3.572           INS_EULER            iInsSBG         -0.707 -0.107 -0.055 
+3.572           INS_NAV              iInsSBG         48.868809 2.157701 29.90  
+3.612           INS_EULER            iInsSBG         -0.707 -0.108 -0.057 
+3.612           INS_NAV              iInsSBG         48.868809 2.157701 29.90  
+3.652           INS_EULER            iInsSBG         -0.707 -0.109 -0.059 
+3.652           INS_NAV              iInsSBG         48.868809 2.157701 29.90  
+3.692           INS_EULER            iInsSBG         -0.707 -0.110 -0.060 
+3.692           INS_NAV              iInsSBG         48.868809 2.157701 29.89  
+3.733           INS_EULER            iInsSBG         -0.707 -0.111 -0.060 
+3.733           INS_NAV              iInsSBG         48.868809 2.157701 29.89  
+3.773           INS_EULER            iInsSBG         -0.707 -0.111 -0.061 
+3.773           INS_NAV              iInsSBG         48.868809 2.157701 29.88  
+3.813           INS_EULER            iInsSBG         -0.707 -0.112 -0.062 
+3.813           INS_NAV              iInsSBG         48.868809 2.157701 29.88  
+3.853           INS_EULER            iInsSBG         -0.706 -0.112 -0.062 
+3.853           INS_NAV              iInsSBG         48.868809 2.157701 29.88  
+3.893           INS_EULER            iInsSBG         -0.706 -0.113 -0.063 
+3.893           INS_NAV              iInsSBG         48.868809 2.157701 29.87  
+3.934           INS_EULER            iInsSBG         -0.706 -0.113 -0.063 
+3.934           INS_NAV              iInsSBG         48.868809 2.157701 29.87  
+3.974           INS_EULER            iInsSBG         -0.706 -0.113 -0.064 
+3.974           INS_NAV              iInsSBG         48.868809 2.157701 29.86  
+4.014           INS_EULER            iInsSBG         -0.706 -0.114 -0.064 
+4.014           INS_NAV              iInsSBG         48.868809 2.157701 29.86  
+4.054           INS_EULER            iInsSBG         -0.706 -0.114 -0.065 
+4.054           INS_NAV              iInsSBG         48.868809 2.157701 29.85  
+4.094           INS_EULER            iInsSBG         -0.706 -0.114 -0.066 
+4.094           INS_NAV              iInsSBG         48.868809 2.157701 29.85  
+4.135           INS_EULER            iInsSBG         -0.706 -0.114 -0.066 
+4.135           INS_NAV              iInsSBG         48.868809 2.157701 29.84  
+4.175           INS_EULER            iInsSBG         -0.706 -0.114 -0.066 
+4.175           INS_NAV              iInsSBG         48.868813 2.157702 29.84  
+4.215           INS_EULER            iInsSBG         -0.706 -0.115 -0.066 
+4.215           INS_NAV              iInsSBG         48.868813 2.157702 29.84  
+4.256           INS_EULER            iInsSBG         -0.706 -0.115 -0.066 
+4.256           INS_NAV              iInsSBG         48.868813 2.157702 29.83  
+4.296           INS_EULER            iInsSBG         -0.706 -0.115 -0.067 
+4.296           INS_NAV              iInsSBG         48.868813 2.157702 29.83  
+4.336           INS_EULER            iInsSBG         -0.706 -0.115 -0.068 
+4.336           INS_NAV              iInsSBG         48.868813 2.157702 29.82  
+4.376           INS_EULER            iInsSBG         -0.706 -0.115 -0.068 
+4.376           INS_NAV              iInsSBG         48.868813 2.157702 29.82  
+4.416           INS_EULER            iInsSBG         -0.706 -0.115 -0.068 
+4.416           INS_NAV              iInsSBG         48.868813 2.157702 29.81  
+4.456           INS_EULER            iInsSBG         -0.706 -0.115 -0.070 
+4.456           INS_NAV              iInsSBG         48.868813 2.157702 29.81  
+4.496           INS_EULER            iInsSBG         -0.706 -0.116 -0.070 
+4.496           INS_NAV              iInsSBG         48.868813 2.157702 29.80  
+4.496           INS_year             iInsSBG         2015.00000   
+4.496           INS_month            iInsSBG         5.00000      
+4.496           INS_day              iInsSBG         1.00000      
+4.496           INS_hour             iInsSBG         0.00000      
+4.496           INS_minute           iInsSBG         0.00000      
+4.496           INS_second           iInsSBG         3.00000      
+4.496           INS_nanoSecond       iInsSBG         0.00000      
+4.496           INS_gpsTimeOfWeek    iInsSBG         3000.00000   
+4.537           INS_EULER            iInsSBG         -0.706 -0.116 -0.070 
+4.537           INS_NAV              iInsSBG         48.868813 2.157702 29.80  
+4.577           INS_EULER            iInsSBG         -0.706 -0.116 -0.071 
+4.577           INS_NAV              iInsSBG         48.868813 2.157702 29.79  
+4.617           INS_EULER            iInsSBG         -0.706 -0.116 -0.071 
+4.617           INS_NAV              iInsSBG         48.868813 2.157702 29.79  
+4.657           INS_EULER            iInsSBG         -0.706 -0.116 -0.071 
+4.657           INS_NAV              iInsSBG         48.868813 2.157702 29.78  
+4.697           INS_EULER            iInsSBG         -0.706 -0.116 -0.072 
+4.697           INS_NAV              iInsSBG         48.868813 2.157702 29.78  
+4.738           INS_EULER            iInsSBG         -0.707 -0.116 -0.071 
+4.738           INS_NAV              iInsSBG         48.868813 2.157702 29.77  
+4.778           INS_EULER            iInsSBG         -0.707 -0.116 -0.071 
+4.778           INS_NAV              iInsSBG         48.868813 2.157702 29.76  
+4.818           INS_EULER            iInsSBG         -0.707 -0.116 -0.072 
+4.818           INS_NAV              iInsSBG         48.868816 2.157702 29.76  
+4.858           INS_EULER            iInsSBG         -0.707 -0.116 -0.072 
+4.858           INS_NAV              iInsSBG         48.868816 2.157702 29.75  
+4.898           INS_EULER            iInsSBG         -0.707 -0.116 -0.073 
+4.898           INS_NAV              iInsSBG         48.868816 2.157702 29.75  
+4.939           INS_EULER            iInsSBG         -0.707 -0.117 -0.073 
+4.939           INS_NAV              iInsSBG         48.868816 2.157702 29.74  
+4.979           INS_EULER            iInsSBG         -0.707 -0.117 -0.073 
+4.979           INS_NAV              iInsSBG         48.868816 2.157702 29.74  
+5.019           INS_EULER            iInsSBG         -0.707 -0.117 -0.073 
+5.019           INS_NAV              iInsSBG         48.868816 2.157702 29.73  
+5.059           INS_EULER            iInsSBG         -0.707 -0.117 -0.074 
+5.059           INS_NAV              iInsSBG         48.868816 2.157702 29.72  
+5.099           INS_EULER            iInsSBG         -0.707 -0.117 -0.074 
+5.099           INS_NAV              iInsSBG         48.868816 2.157702 29.72  
+5.139           INS_EULER            iInsSBG         -0.707 -0.117 -0.075 
+5.139           INS_NAV              iInsSBG         48.868816 2.157702 29.71  
+5.180           INS_EULER            iInsSBG         -0.707 -0.117 -0.075 
+5.180           INS_NAV              iInsSBG         48.868816 2.157702 29.71  
+5.220           INS_EULER            iInsSBG         -0.707 -0.117 -0.076 
+5.220           INS_NAV              iInsSBG         48.868816 2.157702 29.70  
+5.260           INS_EULER            iInsSBG         -0.707 -0.117 -0.076 
+5.260           INS_NAV              iInsSBG         48.868816 2.157702 29.69  
+5.300           INS_EULER            iInsSBG         -0.707 -0.117 -0.076 
+5.300           INS_NAV              iInsSBG         48.868816 2.157702 29.69  
+5.340           INS_EULER            iInsSBG         -0.707 -0.117 -0.077 
+5.340           INS_NAV              iInsSBG         48.868816 2.157703 29.68  
+5.380           INS_EULER            iInsSBG         -0.707 -0.117 -0.077 
+5.380           INS_NAV              iInsSBG         48.868816 2.157703 29.67  
+5.421           INS_EULER            iInsSBG         -0.707 -0.117 -0.078 
+5.421           INS_NAV              iInsSBG         48.868816 2.157703 29.67  
+5.461           INS_EULER            iInsSBG         -0.707 -0.117 -0.078 
+5.461           INS_NAV              iInsSBG         48.868820 2.157703 29.66  
+5.501           INS_EULER            iInsSBG         -0.707 -0.117 -0.078 
+5.501           INS_NAV              iInsSBG         48.868820 2.157703 29.65  
+5.501           INS_year             iInsSBG         2015.00000   
+5.501           INS_month            iInsSBG         5.00000      
+5.501           INS_day              iInsSBG         1.00000      
+5.501           INS_hour             iInsSBG         0.00000      
+5.501           INS_minute           iInsSBG         0.00000      
+5.501           INS_second           iInsSBG         4.00000      
+5.501           INS_nanoSecond       iInsSBG         0.00000      
+5.501           INS_gpsTimeOfWeek    iInsSBG         4000.00000   
+5.541           INS_EULER            iInsSBG         -0.707 -0.117 -0.079 
+5.541           INS_NAV              iInsSBG         48.868820 2.157703 29.65  
+5.581           INS_EULER            iInsSBG         -0.707 -0.118 -0.079 
+5.581           INS_NAV              iInsSBG         48.868820 2.157703 29.64  
+5.622           INS_EULER            iInsSBG         -0.707 -0.118 -0.080 
+5.622           INS_NAV              iInsSBG         48.868820 2.157703 29.63  
+5.662           INS_EULER            iInsSBG         -0.707 -0.118 -0.080 
+5.662           INS_NAV              iInsSBG         48.868820 2.157703 29.63  
+5.702           INS_EULER            iInsSBG         -0.707 -0.118 -0.081 
+5.702           INS_NAV              iInsSBG         48.868820 2.157703 29.62  
+5.742           INS_EULER            iInsSBG         -0.707 -0.118 -0.081 
+5.742           INS_NAV              iInsSBG         48.868820 2.157703 29.61  
+5.782           INS_EULER            iInsSBG         -0.707 -0.118 -0.082 
+5.782           INS_NAV              iInsSBG         48.868820 2.157703 29.61  
+5.822           INS_EULER            iInsSBG         -0.707 -0.118 -0.082 
+5.823           INS_NAV              iInsSBG         48.868820 2.157703 29.60  
+5.863           INS_EULER            iInsSBG         -0.707 -0.118 -0.083 
+5.863           INS_NAV              iInsSBG         48.868820 2.157703 29.59  
+5.903           INS_EULER            iInsSBG         -0.707 -0.118 -0.083 
+5.903           INS_NAV              iInsSBG         48.868820 2.157703 29.58  
+5.943           INS_EULER            iInsSBG         -0.707 -0.118 -0.084 
+5.943           INS_NAV              iInsSBG         48.868820 2.157703 29.58  
+5.983           INS_EULER            iInsSBG         -0.707 -0.118 -0.084 
+5.983           INS_NAV              iInsSBG         48.868820 2.157703 29.57  
+6.023           INS_EULER            iInsSBG         -0.707 -0.118 -0.085 
+6.023           INS_NAV              iInsSBG         48.868820 2.157703 29.56  
+6.064           INS_EULER            iInsSBG         -0.707 -0.118 -0.085 
+6.064           INS_NAV              iInsSBG         48.868824 2.157703 29.55  
+6.104           INS_EULER            iInsSBG         -0.707 -0.118 -0.086 
+6.104           INS_NAV              iInsSBG         48.868824 2.157703 29.55  
+6.144           INS_EULER            iInsSBG         -0.707 -0.118 -0.086 
+6.144           INS_NAV              iInsSBG         48.868824 2.157703 29.54  
+6.184           INS_EULER            iInsSBG         -0.707 -0.118 -0.086 
+6.184           INS_NAV              iInsSBG         48.868824 2.157703 29.53  
+6.224           INS_EULER            iInsSBG         -0.707 -0.118 -0.087 
+6.224           INS_NAV              iInsSBG         48.868824 2.157703 29.52  
+6.264           INS_EULER            iInsSBG         -0.707 -0.118 -0.087 
+6.264           INS_NAV              iInsSBG         48.868824 2.157703 29.52  
+6.305           INS_EULER            iInsSBG         -0.707 -0.118 -0.087 
+6.305           INS_NAV              iInsSBG         48.868824 2.157703 29.51  
+6.345           INS_EULER            iInsSBG         -0.707 -0.118 -0.088 
+6.345           INS_NAV              iInsSBG         48.868824 2.157703 29.50  
+6.385           INS_EULER            iInsSBG         -0.707 -0.118 -0.088 
+6.385           INS_NAV              iInsSBG         48.868824 2.157703 29.49  
+6.425           INS_EULER            iInsSBG         -0.707 -0.118 -0.089 
+6.425           INS_NAV              iInsSBG         48.868824 2.157703 29.48  
+6.466           INS_EULER            iInsSBG         -0.707 -0.118 -0.089 
+6.466           INS_NAV              iInsSBG         48.868824 2.157703 29.48  
+6.506           INS_EULER            iInsSBG         -0.707 -0.119 -0.089 
+6.506           INS_NAV              iInsSBG         48.868824 2.157703 29.47  
+6.506           INS_year             iInsSBG         2015.00000   
+6.506           INS_month            iInsSBG         5.00000      
+6.506           INS_day              iInsSBG         1.00000      
+6.506           INS_hour             iInsSBG         0.00000      
+6.506           INS_minute           iInsSBG         0.00000      
+6.506           INS_second           iInsSBG         5.00000      
+6.506           INS_nanoSecond       iInsSBG         0.00000      
+6.506           INS_gpsTimeOfWeek    iInsSBG         5000.00000   
+6.546           INS_EULER            iInsSBG         -0.707 -0.119 -0.090 
+6.546           INS_NAV              iInsSBG         48.868824 2.157703 29.46  
+6.586           INS_EULER            iInsSBG         -0.707 -0.119 -0.090 
+6.586           INS_NAV              iInsSBG         48.868824 2.157703 29.45  
+6.626           INS_EULER            iInsSBG         -0.707 -0.119 -0.090 
+6.626           INS_NAV              iInsSBG         48.868824 2.157703 29.44  
+6.666           INS_EULER            iInsSBG         -0.707 -0.119 -0.091 
+6.666           INS_NAV              iInsSBG         48.868824 2.157703 29.43  
+6.707           INS_EULER            iInsSBG         -0.707 -0.119 -0.091 
+6.707           INS_NAV              iInsSBG         48.868828 2.157703 29.43  
+6.747           INS_EULER            iInsSBG         -0.707 -0.119 -0.092 
+6.747           INS_NAV              iInsSBG         48.868828 2.157703 29.42  
+6.787           INS_EULER            iInsSBG         -0.707 -0.119 -0.092 
+6.787           INS_NAV              iInsSBG         48.868828 2.157703 29.41  
+6.827           INS_EULER            iInsSBG         -0.707 -0.119 -0.092 
+6.827           INS_NAV              iInsSBG         48.868828 2.157703 29.40  
+6.867           INS_EULER            iInsSBG         -0.708 -0.119 -0.093 
+6.867           INS_NAV              iInsSBG         48.868828 2.157704 29.39  
+6.908           INS_EULER            iInsSBG         -0.708 -0.119 -0.093 
+6.908           INS_NAV              iInsSBG         48.868828 2.157704 29.38  
+6.948           INS_EULER            iInsSBG         -0.708 -0.119 -0.093 
+6.948           INS_NAV              iInsSBG         48.868828 2.157704 29.37  
+6.988           INS_EULER            iInsSBG         -0.708 -0.119 -0.094 
+6.988           INS_NAV              iInsSBG         48.868828 2.157704 29.36  
+7.028           INS_EULER            iInsSBG         -0.708 -0.119 -0.094 
+7.028           INS_NAV              iInsSBG         48.868828 2.157704 29.35  
+7.068           INS_EULER            iInsSBG         -0.708 -0.119 -0.094 
+7.068           INS_NAV              iInsSBG         48.868828 2.157704 29.35  
+7.108           INS_EULER            iInsSBG         -0.708 -0.119 -0.095 
+7.108           INS_NAV              iInsSBG         48.868828 2.157704 29.34  
+7.149           INS_EULER            iInsSBG         -0.708 -0.119 -0.095 
+7.149           INS_NAV              iInsSBG         48.868828 2.157704 29.33  
+7.189           INS_EULER            iInsSBG         -0.708 -0.119 -0.095 
+7.189           INS_NAV              iInsSBG         48.868828 2.157704 29.32  
+7.229           INS_EULER            iInsSBG         -0.708 -0.119 -0.096 
+7.229           INS_NAV              iInsSBG         48.868828 2.157704 29.31  
+7.269           INS_EULER            iInsSBG         -0.708 -0.119 -0.096 
+7.269           INS_NAV              iInsSBG         48.868828 2.157704 29.30  
+7.309           INS_EULER            iInsSBG         -0.708 -0.119 -0.096 
+7.309           INS_NAV              iInsSBG         48.868832 2.157704 29.29  
+7.350           INS_EULER            iInsSBG         -0.708 -0.119 -0.097 
+7.350           INS_NAV              iInsSBG         48.868832 2.157704 29.28  
+7.390           INS_EULER            iInsSBG         -0.708 -0.119 -0.097 
+7.390           INS_NAV              iInsSBG         48.868832 2.157704 29.27  
+7.430           INS_EULER            iInsSBG         -0.708 -0.119 -0.097 
+7.430           INS_NAV              iInsSBG         48.868832 2.157704 29.26  
+7.470           INS_EULER            iInsSBG         -0.708 -0.119 -0.097 
+7.470           INS_NAV              iInsSBG         48.868832 2.157704 29.25  
+7.470           INS_year             iInsSBG         2015.00000   
+7.470           INS_month            iInsSBG         5.00000      
+7.470           INS_day              iInsSBG         1.00000      
+7.470           INS_hour             iInsSBG         0.00000      
+7.470           INS_minute           iInsSBG         0.00000      
+7.470           INS_second           iInsSBG         6.00000      
+7.470           INS_nanoSecond       iInsSBG         0.00000      
+7.470           INS_gpsTimeOfWeek    iInsSBG         6000.00000   
+7.510           INS_EULER            iInsSBG         -0.708 -0.119 -0.098 
+7.510           INS_NAV              iInsSBG         48.868832 2.157704 29.24  
+7.550           INS_EULER            iInsSBG         -0.708 -0.119 -0.098 
+7.550           INS_NAV              iInsSBG         48.868832 2.157704 29.23  
+7.591           INS_EULER            iInsSBG         -0.708 -0.120 -0.098 
+7.591           INS_NAV              iInsSBG         48.868832 2.157704 29.22  
+7.631           INS_EULER            iInsSBG         -0.708 -0.120 -0.099 
+7.631           INS_NAV              iInsSBG         48.868832 2.157704 29.21  
+7.671           INS_EULER            iInsSBG         -0.708 -0.120 -0.099 
+7.671           INS_NAV              iInsSBG         48.868832 2.157704 29.20  
+7.711           INS_EULER            iInsSBG         -0.708 -0.120 -0.100 
+7.711           INS_NAV              iInsSBG         48.868832 2.157704 29.19  
+7.751           INS_EULER            iInsSBG         -0.708 -0.120 -0.100 
+7.751           INS_NAV              iInsSBG         48.868832 2.157704 29.18  
+7.791           INS_EULER            iInsSBG         -0.708 -0.120 -0.100 
+7.791           INS_NAV              iInsSBG         48.868832 2.157704 29.17  
+7.832           INS_EULER            iInsSBG         -0.708 -0.120 -0.100 
+7.832           INS_NAV              iInsSBG         48.868832 2.157704 29.16  
+7.872           INS_EULER            iInsSBG         -0.708 -0.120 -0.101 
+7.872           INS_NAV              iInsSBG         48.868832 2.157704 29.15  
+7.912           INS_EULER            iInsSBG         -0.708 -0.120 -0.101 
+7.912           INS_NAV              iInsSBG         48.868835 2.157704 29.14  
+7.952           INS_EULER            iInsSBG         -0.708 -0.120 -0.101 
+7.952           INS_NAV              iInsSBG         48.868835 2.157704 29.13  
+7.992           INS_EULER            iInsSBG         -0.708 -0.120 -0.101 
+7.992           INS_NAV              iInsSBG         48.868835 2.157704 29.12  
+8.032           INS_EULER            iInsSBG         -0.708 -0.120 -0.102 
+8.032           INS_NAV              iInsSBG         48.868835 2.157704 29.11  
+8.072           INS_EULER            iInsSBG         -0.708 -0.120 -0.102 
+8.072           INS_NAV              iInsSBG         48.868835 2.157704 29.10  
+8.113           INS_EULER            iInsSBG         -0.708 -0.120 -0.103 
+8.113           INS_NAV              iInsSBG         48.868835 2.157704 29.09  
+8.153           INS_EULER            iInsSBG         -0.708 -0.120 -0.103 
+8.153           INS_NAV              iInsSBG         48.868835 2.157704 29.08  
+8.193           INS_EULER            iInsSBG         -0.708 -0.120 -0.103 
+8.193           INS_NAV              iInsSBG         48.868835 2.157704 29.07  
+8.233           INS_EULER            iInsSBG         -0.708 -0.120 -0.103 
+8.233           INS_NAV              iInsSBG         48.868835 2.157704 29.06  
+8.273           INS_EULER            iInsSBG         -0.708 -0.120 -0.104 
+8.273           INS_NAV              iInsSBG         48.868835 2.157704 29.05  
+8.313           INS_EULER            iInsSBG         -0.708 -0.120 -0.104 
+8.313           INS_NAV              iInsSBG         48.868835 2.157704 29.03  
+8.353           INS_EULER            iInsSBG         -0.708 -0.120 -0.104 
+8.353           INS_NAV              iInsSBG         48.868835 2.157704 29.02  
+8.394           INS_EULER            iInsSBG         -0.708 -0.120 -0.105 
+8.394           INS_NAV              iInsSBG         48.868835 2.157704 29.01  
+8.434           INS_EULER            iInsSBG         -0.708 -0.120 -0.105 
+8.434           INS_NAV              iInsSBG         48.868835 2.157704 29.00  
+8.474           INS_NAV              iInsSBG         48.868835 2.157704 28.99  
+8.474           INS_year             iInsSBG         2015.00000   
+8.474           INS_month            iInsSBG         5.00000      
+8.474           INS_day              iInsSBG         1.00000      
+8.474           INS_hour             iInsSBG         0.00000      
+8.474           INS_minute           iInsSBG         0.00000      
+8.474           INS_second           iInsSBG         7.00000      
+8.474           INS_nanoSecond       iInsSBG         0.00000      
+8.474           INS_gpsTimeOfWeek    iInsSBG         7000.00000   
+8.514           INS_EULER            iInsSBG         -0.708 -0.120 -0.105 
+8.514           INS_NAV              iInsSBG         48.868839 2.157704 28.98  
+8.554           INS_EULER            iInsSBG         -0.708 -0.120 -0.105 
+8.554           INS_NAV              iInsSBG         48.868839 2.157704 28.97  
+8.594           INS_EULER            iInsSBG         -0.708 -0.120 -0.106 
+8.594           INS_NAV              iInsSBG         48.868839 2.157704 28.96  
+8.635           INS_EULER            iInsSBG         -0.708 -0.120 -0.106 
+8.635           INS_NAV              iInsSBG         48.868839 2.157704 28.94  
+8.675           INS_EULER            iInsSBG         -0.708 -0.120 -0.106 
+8.675           INS_NAV              iInsSBG         48.868839 2.157704 28.93  
+8.715           INS_EULER            iInsSBG         -0.708 -0.120 -0.106 
+8.715           INS_NAV              iInsSBG         48.868839 2.157704 28.92  
+8.755           INS_EULER            iInsSBG         -0.708 -0.120 -0.107 
+8.755           INS_NAV              iInsSBG         48.868839 2.157704 28.91  
+8.795           INS_EULER            iInsSBG         -0.708 -0.120 -0.107 
+8.795           INS_NAV              iInsSBG         48.868839 2.157704 28.90  
+8.835           INS_EULER            iInsSBG         -0.708 -0.120 -0.107 
+8.835           INS_NAV              iInsSBG         48.868839 2.157704 28.89  
+8.876           INS_EULER            iInsSBG         -0.708 -0.120 -0.108 
+8.876           INS_NAV              iInsSBG         48.868839 2.157704 28.87  
+8.916           INS_NAV              iInsSBG         48.868839 2.157704 28.86  
+8.956           INS_EULER            iInsSBG         -0.708 -0.120 -0.108 
+8.956           INS_NAV              iInsSBG         48.868839 2.157704 28.85  
+8.996           INS_NAV              iInsSBG         48.868839 2.157704 28.84  
+9.036           INS_EULER            iInsSBG         -0.708 -0.121 -0.109 
+9.036           INS_NAV              iInsSBG         48.868839 2.157704 28.83  
+9.076           INS_EULER            iInsSBG         -0.708 -0.121 -0.109 
+9.076           INS_NAV              iInsSBG         48.868843 2.157704 28.81  
+9.117           INS_EULER            iInsSBG         -0.708 -0.121 -0.109 
+9.117           INS_NAV              iInsSBG         48.868843 2.157704 28.80  
+9.157           INS_EULER            iInsSBG         -0.708 -0.121 -0.109 
+9.157           INS_NAV              iInsSBG         48.868843 2.157704 28.79  
+9.197           INS_EULER            iInsSBG         -0.708 -0.121 -0.110 
+9.197           INS_NAV              iInsSBG         48.868843 2.157704 28.78  
+9.237           INS_EULER            iInsSBG         -0.708 -0.121 -0.110 
+9.237           INS_NAV              iInsSBG         48.868843 2.157704 28.76  
+9.277           INS_EULER            iInsSBG         -0.708 -0.121 -0.110 
+9.277           INS_NAV              iInsSBG         48.868843 2.157704 28.75  
+9.317           INS_EULER            iInsSBG         -0.708 -0.121 -0.110 
+9.317           INS_NAV              iInsSBG         48.868843 2.157704 28.74  
+9.358           INS_EULER            iInsSBG         -0.708 -0.121 -0.111 
+9.358           INS_NAV              iInsSBG         48.868843 2.157704 28.73  
+9.398           INS_EULER            iInsSBG         -0.708 -0.121 -0.111 
+9.398           INS_NAV              iInsSBG         48.868843 2.157704 28.71  
+9.438           INS_EULER            iInsSBG         -0.708 -0.121 -0.111 
+9.438           INS_NAV              iInsSBG         48.868843 2.157704 28.70  
+9.478           INS_NAV              iInsSBG         48.868843 2.157704 28.69  
+9.478           INS_year             iInsSBG         2015.00000   
+9.478           INS_month            iInsSBG         5.00000      
+9.478           INS_day              iInsSBG         1.00000      
+9.478           INS_hour             iInsSBG         0.00000      
+9.478           INS_minute           iInsSBG         0.00000      
+9.478           INS_second           iInsSBG         8.00000      
+9.478           INS_nanoSecond       iInsSBG         0.00000      
+9.478           INS_gpsTimeOfWeek    iInsSBG         8000.00000   
+9.518           INS_EULER            iInsSBG         -0.708 -0.121 -0.111 
+9.518           INS_NAV              iInsSBG         48.868843 2.157704 28.67  
+9.558           INS_EULER            iInsSBG         -0.708 -0.121 -0.112 
+9.558           INS_NAV              iInsSBG         48.868843 2.157704 28.66  
+9.599           INS_EULER            iInsSBG         -0.708 -0.121 -0.112 
+9.599           INS_NAV              iInsSBG         48.868843 2.157704 28.65  
+9.639           INS_EULER            iInsSBG         -0.708 -0.121 -0.112 
+9.639           INS_NAV              iInsSBG         48.868847 2.157704 28.64  
+9.679           INS_EULER            iInsSBG         -0.708 -0.121 -0.112 
+9.679           INS_NAV              iInsSBG         48.868847 2.157704 28.62  
+9.719           INS_EULER            iInsSBG         -0.708 -0.121 -0.112 
+9.719           INS_NAV              iInsSBG         48.868847 2.157704 28.61  
+9.759           INS_EULER            iInsSBG         -0.708 -0.121 -0.113 
+9.759           INS_NAV              iInsSBG         48.868847 2.157704 28.60  
+9.799           INS_EULER            iInsSBG         -0.708 -0.121 -0.113 
+9.799           INS_NAV              iInsSBG         48.868847 2.157704 28.58  
+9.840           INS_EULER            iInsSBG         -0.708 -0.121 -0.113 
+9.840           INS_NAV              iInsSBG         48.868847 2.157703 28.57  
+9.880           INS_EULER            iInsSBG         -0.708 -0.121 -0.113 
+9.880           INS_NAV              iInsSBG         48.868847 2.157703 28.56  
+9.920           INS_EULER            iInsSBG         -0.708 -0.121 -0.113 
+9.920           INS_NAV              iInsSBG         48.868847 2.157703 28.54  
+9.960           INS_EULER            iInsSBG         -0.708 -0.121 -0.114 
+9.960           INS_NAV              iInsSBG         48.868847 2.157703 28.53  
+10.000          INS_EULER            iInsSBG         -0.708 -0.121 -0.114 
+10.000          INS_NAV              iInsSBG         48.868847 2.157703 28.52  
+10.040          INS_EULER            iInsSBG         -0.708 -0.121 -0.114 
+10.040          INS_NAV              iInsSBG         48.868847 2.157703 28.50  
+10.081          INS_EULER            iInsSBG         -0.708 -0.121 -0.114 
+10.081          INS_NAV              iInsSBG         48.868847 2.157703 28.49  
+10.121          INS_EULER            iInsSBG         -0.708 -0.121 -0.114 
+10.121          INS_NAV              iInsSBG         48.868847 2.157703 28.47  
+10.161          INS_EULER            iInsSBG         -0.708 -0.121 -0.115 
+10.161          INS_NAV              iInsSBG         48.868847 2.157703 28.46  
+10.201          INS_EULER            iInsSBG         -0.708 -0.121 -0.115 
+10.201          INS_NAV              iInsSBG         48.868851 2.157703 28.45  
+10.241          INS_EULER            iInsSBG         -0.708 -0.121 -0.115 
+10.241          INS_NAV              iInsSBG         48.868851 2.157703 28.43  
+10.282          INS_EULER            iInsSBG         -0.708 -0.121 -0.115 
+10.282          INS_NAV              iInsSBG         48.868851 2.157703 28.42  
+10.322          INS_EULER            iInsSBG         -0.708 -0.121 -0.116 
+10.322          INS_NAV              iInsSBG         48.868851 2.157703 28.40  
+10.362          INS_EULER            iInsSBG         -0.708 -0.121 -0.116 
+10.362          INS_NAV              iInsSBG         48.868851 2.157703 28.39  
+10.402          INS_EULER            iInsSBG         -0.708 -0.121 -0.116 
+10.402          INS_NAV              iInsSBG         48.868851 2.157703 28.38  
+10.442          INS_EULER            iInsSBG         -0.708 -0.121 -0.116 
+10.442          INS_NAV              iInsSBG         48.868851 2.157703 28.36  
+10.483          INS_EULER            iInsSBG         -0.708 -0.121 -0.116 
+10.483          INS_NAV              iInsSBG         48.868851 2.157703 28.35  
+10.483          INS_year             iInsSBG         2015.00000   
+10.483          INS_month            iInsSBG         5.00000      
+10.483          INS_day              iInsSBG         1.00000      
+10.483          INS_hour             iInsSBG         0.00000      
+10.483          INS_minute           iInsSBG         0.00000      
+10.483          INS_second           iInsSBG         9.00000      
+10.483          INS_nanoSecond       iInsSBG         0.00000      
+10.483          INS_gpsTimeOfWeek    iInsSBG         9000.00000   
+10.523          INS_EULER            iInsSBG         -0.708 -0.121 -0.117 
+10.523          INS_NAV              iInsSBG         48.868851 2.157703 28.33  
+10.563          INS_EULER            iInsSBG         -0.708 -0.121 -0.117 
+10.563          INS_NAV              iInsSBG         48.868851 2.157703 28.32  
+10.603          INS_EULER            iInsSBG         -0.708 -0.121 -0.117 
+10.603          INS_NAV              iInsSBG         48.868851 2.157703 28.30  
+10.643          INS_EULER            iInsSBG         -0.708 -0.121 -0.117 
+10.643          INS_NAV              iInsSBG         48.868851 2.157703 28.29  
+10.684          INS_EULER            iInsSBG         -0.708 -0.121 -0.118 
+10.684          INS_NAV              iInsSBG         48.868851 2.157703 28.27  
+10.724          INS_EULER            iInsSBG         -0.708 -0.121 -0.118 
+10.724          INS_NAV              iInsSBG         48.868855 2.157703 28.26  
+10.764          INS_EULER            iInsSBG         -0.708 -0.121 -0.118 
+10.764          INS_NAV              iInsSBG         48.868855 2.157703 28.24  
+10.804          INS_EULER            iInsSBG         -0.708 -0.121 -0.118 
+10.804          INS_NAV              iInsSBG         48.868855 2.157703 28.23  
+10.844          INS_EULER            iInsSBG         -0.708 -0.121 -0.118 
+10.844          INS_NAV              iInsSBG         48.868855 2.157703 28.21  
+10.884          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+10.884          INS_NAV              iInsSBG         48.868855 2.157703 28.20  
+10.924          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+10.924          INS_NAV              iInsSBG         48.868855 2.157703 28.18  
+10.965          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+10.965          INS_NAV              iInsSBG         48.868855 2.157703 28.15  
+11.005          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+11.045          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+11.045          INS_NAV              iInsSBG         48.868855 2.157703 28.14  
+11.085          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+11.085          INS_NAV              iInsSBG         48.868855 2.157703 28.12  
+11.125          INS_EULER            iInsSBG         -0.708 -0.121 -0.119 
+11.125          INS_NAV              iInsSBG         48.868855 2.157703 28.11  
+11.166          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.166          INS_NAV              iInsSBG         48.868858 2.157702 28.08  
+11.206          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.246          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.246          INS_NAV              iInsSBG         48.868858 2.157702 28.04  
+11.286          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.286          INS_NAV              iInsSBG         48.868858 2.157702 28.03  
+11.326          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.366          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.366          INS_NAV              iInsSBG         48.868858 2.157702 28.00  
+11.407          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.447          INS_EULER            iInsSBG         -0.708 -0.121 -0.120 
+11.447          INS_NAV              iInsSBG         48.868858 2.157702 27.97  
+11.487          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.487          INS_year             iInsSBG         2015.00000   
+11.487          INS_month            iInsSBG         5.00000      
+11.487          INS_day              iInsSBG         1.00000      
+11.487          INS_hour             iInsSBG         0.00000      
+11.487          INS_minute           iInsSBG         0.00000      
+11.487          INS_second           iInsSBG         10.00000     
+11.487          INS_nanoSecond       iInsSBG         0.00000      
+11.487          INS_gpsTimeOfWeek    iInsSBG         10000.00000  
+11.527          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.527          INS_NAV              iInsSBG         48.868858 2.157702 27.95  
+11.567          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.567          INS_NAV              iInsSBG         48.868858 2.157702 27.93  
+11.608          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.608          INS_NAV              iInsSBG         48.868858 2.157702 27.92  
+11.648          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.648          INS_NAV              iInsSBG         48.868858 2.157702 27.90  
+11.688          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.688          INS_NAV              iInsSBG         48.868862 2.157702 27.87  
+11.728          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.768          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.768          INS_NAV              iInsSBG         48.868862 2.157702 27.83  
+11.808          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.849          INS_EULER            iInsSBG         -0.708 -0.121 -0.121 
+11.849          INS_NAV              iInsSBG         48.868862 2.157702 27.80  
+11.889          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+11.889          INS_NAV              iInsSBG         48.868862 2.157702 27.78  
+11.929          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+11.929          INS_NAV              iInsSBG         48.868862 2.157702 27.77  
+11.969          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+11.969          INS_NAV              iInsSBG         48.868862 2.157701 27.75  
+12.010          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.010          INS_NAV              iInsSBG         48.868862 2.157701 27.73  
+12.050          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.050          INS_NAV              iInsSBG         48.868862 2.157701 27.72  
+12.090          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.090          INS_NAV              iInsSBG         48.868862 2.157701 27.70  
+12.130          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.130          INS_NAV              iInsSBG         48.868862 2.157701 27.68  
+12.170          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.170          INS_NAV              iInsSBG         48.868866 2.157701 27.67  
+12.210          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.210          INS_NAV              iInsSBG         48.868866 2.157701 27.65  
+12.251          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.251          INS_NAV              iInsSBG         48.868866 2.157701 27.63  
+12.291          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.291          INS_NAV              iInsSBG         48.868866 2.157701 27.61  
+12.331          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.331          INS_NAV              iInsSBG         48.868866 2.157701 27.60  
+12.371          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.371          INS_NAV              iInsSBG         48.868866 2.157701 27.58  
+12.411          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.411          INS_NAV              iInsSBG         48.868866 2.157701 27.56  
+12.452          INS_EULER            iInsSBG         -0.708 -0.121 -0.122 
+12.452          INS_NAV              iInsSBG         48.868866 2.157701 27.54  
+12.492          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.492          INS_NAV              iInsSBG         48.868866 2.157701 27.53  
+12.492          INS_year             iInsSBG         2015.00000   
+12.492          INS_month            iInsSBG         5.00000      
+12.492          INS_day              iInsSBG         1.00000      
+12.492          INS_hour             iInsSBG         0.00000      
+12.492          INS_minute           iInsSBG         0.00000      
+12.492          INS_second           iInsSBG         11.00000     
+12.492          INS_nanoSecond       iInsSBG         0.00000      
+12.492          INS_gpsTimeOfWeek    iInsSBG         11000.00000  
+12.532          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.572          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.572          INS_NAV              iInsSBG         48.868866 2.157701 27.49  
+12.612          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.612          INS_NAV              iInsSBG         48.868866 2.157701 27.47  
+12.652          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.653          INS_NAV              iInsSBG         48.868870 2.157701 27.45  
+12.693          INS_EULER            iInsSBG         -0.708 -0.121 -0.123 
+12.693          INS_NAV              iInsSBG         48.868870 2.157701 27.44  
+12.733          INS_EULER            iInsSBG         -0.708 -0.121 -0.124 
+12.733          INS_NAV              iInsSBG         48.868870 2.157701 27.42  
+12.773          INS_EULER            iInsSBG         -0.708 -0.121 -0.124 
+12.773          INS_NAV              iInsSBG         48.868870 2.157701 27.40  
+12.813          INS_EULER            iInsSBG         -0.708 -0.121 -0.124 
+12.813          INS_NAV              iInsSBG         48.868870 2.157701 27.38  
+12.853          INS_EULER            iInsSBG         -0.708 -0.121 -0.124 
+12.853          INS_NAV              iInsSBG         48.868870 2.157700 27.36  
+12.894          INS_EULER            iInsSBG         -0.707 -0.121 -0.124 
+12.894          INS_NAV              iInsSBG         48.868870 2.157700 27.35  
+12.934          INS_EULER            iInsSBG         -0.708 -0.121 -0.124 
+12.934          INS_NAV              iInsSBG         48.868870 2.157700 27.33  
+12.974          INS_EULER            iInsSBG         -0.708 -0.121 -0.125 
+12.974          INS_NAV              iInsSBG         48.868870 2.157700 27.31  
+13.014          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.014          INS_NAV              iInsSBG         48.868870 2.157700 27.29  
+13.054          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.054          INS_NAV              iInsSBG         48.868870 2.157700 27.27  
+13.094          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.094          INS_NAV              iInsSBG         48.868874 2.157700 27.25  
+13.135          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.135          INS_NAV              iInsSBG         48.868874 2.157700 27.23  
+13.175          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.175          INS_NAV              iInsSBG         48.868874 2.157700 27.22  
+13.215          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.215          INS_NAV              iInsSBG         48.868874 2.157700 27.20  
+13.255          INS_EULER            iInsSBG         -0.707 -0.121 -0.125 
+13.255          INS_NAV              iInsSBG         48.868874 2.157700 27.18  
+13.295          INS_EULER            iInsSBG         -0.707 -0.121 -0.126 
+13.295          INS_NAV              iInsSBG         48.868874 2.157700 27.16  
+13.336          INS_EULER            iInsSBG         -0.707 -0.121 -0.126 
+13.336          INS_NAV              iInsSBG         48.868874 2.157700 27.14  
+13.376          INS_EULER            iInsSBG         -0.707 -0.121 -0.126 
+13.376          INS_NAV              iInsSBG         48.868874 2.157700 27.12  
+13.416          INS_EULER            iInsSBG         -0.707 -0.121 -0.126 
+13.416          INS_NAV              iInsSBG         48.868874 2.157699 27.10  

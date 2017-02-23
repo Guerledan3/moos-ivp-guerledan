@@ -1,0 +1,46 @@
+# Recuperation des donnees des fichiers Slog pour avoir les sondes en même temps que les donnees SVG 
+
+# Explication grep : recherche de mots dans une fichier
+# -i : ne pas tenir compte des majuscules 
+# -n : renvoyer le numero de ligne
+# -v : ignorer le mot 
+# -E : expression irreguliere ; ex: grep -E [0-4] fichier, renvoi tous les chiffres compris entre 0 et 4
+
+# Explication cut : permet de couper une partie des lignes dans un fichier
+# ex : cut -c 2-5 fichier (si on veut aller au debut ou a la fin on ne met juste pas de chiffre -2 ou 2-)
+# -d : delimiteur 
+# -f : place du champ à conserver (pour conserver une serie de champ on met un - comme 4-8)
+
+## TESTS
+# 1
+# grep -E [0-1048] LogMoos_19_10_2016_____15_29_27.slog > Donnees_slog_20161910_1529/20161910_1529_sondesPOS.txt
+# plantecar c'ets nombre de caracteres et pas caracteres compris entre
+# 2
+# awk 'length($1)>4 {print $1}' && grep -i -n -v "NAV_YAW" -E [-4-4] {print $3} LogMoos_19_10_2016_____15_29_27.slog > Donnees_slog_20161910_1529/20161910_1529_sondesPOS.txt
+# a l'air de fair eplanter linus
+# 3
+# grep -i -n -v "NAV_YAW" -E[-4-4] {print $3} LogMoos_19_10_2016_____15_29_27.slog > Donnees_slog_20161910_1529/20161910_1529_sondesPOS.txt
+# meme probleme que 1
+# 4
+#  | sed -e 's/[^0-9]//g' 
+# 5
+# awk echo'{print $1,$3,$4,$5,$6,$7,$8,$9}' | sed -e 's/[^-.0-9]//g' LogMoos_19_10_2016_____15_29_27.slog > Donnees_slog_20161910_1529/20161910_1529_sondesPOS.txt
+#a lair de fair eplanter linux
+
+
+## SOlution finale
+
+# On enleve toutes les lignes commencant par %%
+
+grep -i -v %% LogMoos_19_10_2016_____15_29_27.slog > Donnees_slog_20161910_1529/20161910_1529_sondesPOS_etape1.txt
+
+# On ne reprend que les colonnes utiles Temps, Yaw, Pitch, Roll, Height, Lat, Long, Sonde
+
+awk '{printf ("%10s %10s %12s %12s %10s %9s %10s %6s\n",$1,$3,$4,$5,$6,$7,$8,$9)}' Donnees_slog_20161910_1529/20161910_1529_sondesPOS_etape1.txt > Donnees_slog_20161910_1529/20161910_1529_sondesPOS_etape2.txt
+
+
+# On enleve toutes le slignes contenant Nan
+
+grep -i -v nan Donnees_slog_20161910_1529/20161910_1529_sondesPOS_etape2.txt > Donnees_slog_20161910_1529/20161910_1529_sondesPOS.txt
+
+

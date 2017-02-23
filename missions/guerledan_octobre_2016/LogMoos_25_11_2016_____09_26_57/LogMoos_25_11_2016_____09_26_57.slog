@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_25_11_2016_____09_26_57/LogMoos_25_11_2016_____09_26_57.slog
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1480062416.57
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   (1) TIME 
+%%   (2) NAV_LAT
+%%   (3) NAV_LONG
+%%   (4) GPS_LAT
+%%   (5) GPS_LONG
+%%   (6) GPS_ELE
+%%   (7) INS_EULER
+%%   (8) INS_NAV
+%%   (9) Sounder_RANGE
+%%   (10) GPS_RAW_NMEA
+%%   (11) GPS_SIG
+%%   (12) GPS_FIX
+%%   (13) GPS_SPEED
+%%   (14) GPS_HEADING
+%%   (15) INS_year
+%%   (16) INS_month
+%%   (17) INS_day
+%%   (18) INS_hour
+%%   (19) INS_minute
+%%   (20) INS_second
+%%   (21) INS_nanoSecond
+%%   (22) INS_gpsTimeOfWeek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TIME            NAV_LAT            NAV_LONG           GPS_LAT            GPS_LONG           GPS_ELE            INS_EULER          INS_NAV            Sounder_RANGE      GPS_RAW_NMEA       GPS_SIG            GPS_FIX            GPS_SPEED          GPS_HEADING        INS_year           INS_month          INS_day            INS_hour           INS_minute         INS_second         INS_nanoSecond     INS_gpsTimeOfWeek  
+%% TIME            [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          [   0.66]          
+0.696243           NaN                NaN                NaN                NaN                NaN                NaN                NaN                0                  NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                
+%% TIME            NAV_LAT            NAV_LONG           GPS_LAT            GPS_LONG           GPS_ELE            INS_EULER          INS_NAV            Sounder_RANGE      GPS_RAW_NMEA       GPS_SIG            GPS_FIX            GPS_SPEED          GPS_HEADING        INS_year           INS_month          INS_day            INS_hour           INS_minute         INS_second         INS_nanoSecond     INS_gpsTimeOfWeek  
+%% TIME            [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          [   0.70]          
+0.896806           NaN                NaN                NaN                NaN                NaN                NaN                NaN                0                  NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                
+1.097345           NaN                NaN                NaN                NaN                NaN                NaN                NaN                0                  NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                NaN                

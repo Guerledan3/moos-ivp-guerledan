@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_19_10_2016_____09_29_06/LogMoos_19_10_2016_____09_29_06._moos
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1476862145.65
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ServerHost = localhost
+ServerPort = 9000
+Community  = AUV
+
+LatOrigin  = 48.198334
+LongOrigin = -3.014402
+
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 200
+	
+  Run = MOOSDB            @ NewConsole = false
+
+  // ***************** CONTROL ****************
+
+  Run = pMarineViewer         @ NewConsole = false
+  Run = iInsSBG               @ NewConsole = false
+  Run = iSounder              @ NewConsole = false
+  Run = pLogger               @ NewConsole = false
+}
+
+ProcessConfig = pMarineViewer
+{
+  AppTick   = 4
+  CommsTick = 4
+
+  tiff_file = guerledan.tif
+  zoom      = 1.0
+
+  appcast_viewable = true
+
+  // les paramètres par défaut sont conservés
+  // pour plus d'informations, entrer pMarineViewer -e
+  // ou lire la documentation en ligne de l'application
+
+  trails_length = 1000
+  trails_connect_viewable = true
+}
+
+ProcessConfig = iSounder
+{
+  AppTick   = 4
+  CommsTick = 4
+
+  SERIAL_PORT = /dev/sounder
+}
+
+ProcessConfig = iInsSBG
+{
+   AppTick   = 25
+   CommsTick = 25
+
+   UART_PORT = /dev/ttyUSB0
+   UART_BAUD_RATE = 115200
+}
+
+ProcessConfig = pLogger
+{
+	AppTick = 4
+	CommsTick = 4
+	File = LogMoos
+	PATH = /home/tonywelte/moos-ivp-extend/missions/guerledan
+	SyncLog = true @ 0.2
+	AsyncLog = true
+	WildCardLogging = false
+	FileTimeStamp = true
+
+	Log = DIST_TRACKLINE@  0
+	Log = NAV_YAW @ 0
+	Log = NAV_PITCH @ 0
+	Log = NAV_ROLL @ 0
+	Log = NAV_DEPTH @ 0
+	Log = NAV_LAT @ 0
+	Log = NAV_LONG @ 0
+	Log = Sounder_RANGE @ 0
+	Log = GPS_RAW_NMEA @ 0
+	Log = GPS_SIG @ 0
+	Log = GPS_FIX @ 0
+	Log = GPS_SPEED @ 0
+	Log = GPS_HEADING @ 0
+	
+}
+

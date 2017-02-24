@@ -112,6 +112,14 @@ bool GPS::Iterate() {
         Notify("GPS_LAT", m_lat);
         Notify("GPS_LONG", m_lon);
         Notify("GPS_ELE", m_ele);
+
+        // Formated notify
+        stringstream gps_ss;
+        gps_ss << "TIME=" << MOOS::Time() << "GPS_LAT=" << m_lat << ",GPS_LONG=" << m_lon << ",GPS_ELE=" << m_ele << ",GPS_SPEED=" << m_speed << ",GPS_HEADING=" << m_heading << ",GPS_FIX=" << m_fix << ",GPS_SIG=" << m_sig;
+        printf("%s\n", gps_ss.str().c_str());
+        Notify("GPS", gps_ss.str());
+
+
     } else if (m_error.value() == 2.0) {
         //Case end of line beacause the trame is not arrived completly yet
     } else {

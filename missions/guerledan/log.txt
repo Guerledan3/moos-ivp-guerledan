@@ -1,0 +1,206 @@
+[32muSimMarine launching as uSimMarine
+[0m
+
+-------------- moos connect ----------------------
+  contacting a MOOS server localhost:9000 -  try 00001 
+  Handshaking as uSimMarine             [1;32m[ok]
+[0m  DB reports async support is           [1;32m[on]
+[0m  DB is running on                      [1;32mLinuxROG
+[0m  Timing skew estimation is             [33m[off] (not needed)
+[0m--------------------------------------------------
+
+Sim connected
+***************************************************
+*  uSimMarine starting ...
+***************************************************
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  START_POS
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  COMMSTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  APPTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
+[32miSimState launching as iSimState
+[0m
+
+-------------- moos connect ----------------------
+  contacting a MOOS server localhost:9000 -  try 00001 
+  Handshaking as iSimState              [1;32m[ok]
+[0m  DB reports async support is           [1;32m[on]
+[0m  DB is running on                      [1;32mLinuxROG
+[0m  Timing skew estimation is             [33m[off] (not needed)
+[0m--------------------------------------------------
+
+***************************************************
+*  iSimState starting ...
+***************************************************
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  COMMSTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  APPTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
+*************************************
+*  This is Antler, head of MOOS...  *
+*  P. Newman 2008                   *
+*************************************
+
+
+|****** Launch ******|
+
+Unless directed otherwise using system path to locate binaries 
+   [001] Process: MOOSDB          ~ MOOSDB          launched successfully
+   [002] Process: uSimMarine      ~ uSimMarine      launched successfully
+   [003] Process: iSimState       ~ iSimState       launched successfully
+Failed exec - not good. Called exec as follows:
+[32mpMarinePID launching as pMarinePID
+[0m
+
+-------------- moos connect ----------------------
+  contacting a MOOS server localhost:9000 -  try 00001 
+  Handshaking as pMarinePID             [1;32m[ok]
+[0m  DB reports async support is           [1;32m[on]
+[0m  DB is running on                      [1;32mLinuxROG
+[0m  Timing skew estimation is             [33m[off] (not needed)
+[0m--------------------------------------------------
+
+pMarinePID starting....
+ pMarinePID says: ** NEW CONTROLLER GAINS ARE **
+ pMarinePID says: YAW_PID_KP             = 1.200
+ pMarinePID says: YAW_PID_KD             = 0.000
+ pMarinePID says: YAW_PID_KI             = 0.300
+ pMarinePID says: YAW_PID_INTEGRAL_LIMIT = 0.070
+ pMarinePID says: MAXRUDDER              = 100.000
+ pMarinePID says: SPEED_PID_KP           = 1.000
+ pMarinePID says: SPEED_PID_KD           = 0.000
+ pMarinePID says: SPEED_PID_KI           = 0.000
+ pMarinePID says: SPEED_PID_INTEGRAL_LIMIT = 0.070
+ pMarinePID says: MAXTHRUST              = 100.000
+Depth Control is OFF
+[32mpNodeReporter launching as pNodeReporter
+[0m
+
+-------------- moos connect ----------------------
+  contacting a MOOS server localhost:9000 -  try 00001 
+  Handshaking as pNodeReporter          [1;32m[ok]
+[0m  DB reports async support is           [1;32m[on]
+[0m  DB is running on                      [1;32mLinuxROG
+[0m  Timing skew estimation is             [33m[off] (not needed)
+[0m--------------------------------------------------
+
+***************************************************
+*  pNodeReporter starting ...
+***************************************************
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  ALT_NAV_NAME
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  ALT_NAV_PREFIX
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  PLATFORM_LENGTH
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  PLATFORM_TYPE
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  COMMSTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  APPTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
+[32mpMarineViewer launching as pMarineViewer
+[0m
+pMarineViewer thread spawned
+starting pMarineViewer thread
+
+-------------- moos connect ----------------------
+  contacting a MOOS server localhost:9000 -  try 00001 
+  Handshaking as pMarineViewer          [1;32m[ok]
+[0m  DB reports async support is           [1;32m[on]
+[0m  DB is running on                      [1;32mLinuxROG
+[0m  Timing skew estimation is             [33m[off] (not needed)
+[0m--------------------------------------------------
+
+***************************************************
+*  pMarineViewer starting ...
+***************************************************
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  SCOPE
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  TRAILS_CONNECT_VIEWABLE
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  TRAILS_LENGTH
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  APPCAST_VIEWABLE
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  ZOOM
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  TIFF_FILE
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  COMMSTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+param =  APPTICK
++++++++++++++++++++++++++++++++++++++++++++++++++
+Setting PMV LatOrigin based on the MOOS file. 
+pMarineViewer is Running:
+ |-Baseline AppTick   @ 1.0 Hz
+ |--Comms is Full Duplex and Asynchronous
+ -Iterate Mode 0 :
+   |-Regular iterate and message delivery at 1 Hz
+	|-Time Warp @ 20.0 
+	|-Time Warp delay @ 8.0 ms 
+
+
+trying to open:[guerledan.tif]
+Result:0x1366020
+Trying to open: guerledan.tif
+Success: guerledan.tif
+.new_proc_count3
+.new_proc_count4
+...............................................................................................................................................*************************************
+*  This is Antler, head of MOOS...  *
+*  P. Newman 2008                   *
+*************************************
+
+
+|****** Launch ******|
+
+Unless directed otherwise using system path to locate binaries 
+   [001] Process: MOOSDB          ~ MOOSDB          launched successfully
+   [002] Process: uSimMarine      ~ uSimMarine      launched successfully
+   [003] Process: iSimState       ~ iSimState       launched successfully
+   [004] Process: iSimSounder     ~ iSimSounder     launched successfully
+   [005] Process: pMarinePID      ~ pMarinePID      launched successfully
+   [006] Process: pNodeReporter   ~ pNodeReporter   launched successfully
+   [007] Process: pMarineViewer   ~ pMarineViewer   launched successfully
+   [008] Process: uMS             ~ uMS             launched successfully
+   [010] Process: pLatLongToLamb  ~ pLatLongToLamb  launched successfully
+   [010] Process: pLatLongToLamb  has quit
+   [009] Process: iSimSounder     has quit
+
+
+|***** Shutdown *****|
+
+
+   Signalling uMS             [OK]
+   Signalling pMarineViewer   [OK]
+   Signalling pNodeReporter   [OK]
+   Signalling pMarinePID      [OK]
+   Signalling iSimState       [OK]
+   Signalling uSimMarine      [OK]
+   Signalling MOOSDB          [OK]
+
+   All spawned processes shutdown.
+
+   That was the MOOS 
+

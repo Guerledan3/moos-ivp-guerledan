@@ -11,7 +11,7 @@ ProcessConfig = ANTLER
 {
   MSBetweenLaunches = 200
 	
-  Run = MOOSDB          @ NewConsole = false
+  Run = MOOSDB          @ NewConsole = true
 
   // **************** SIMULATION **************
   Run = uSimMarine      @ NewConsole = false
@@ -25,9 +25,10 @@ ProcessConfig = ANTLER
   Run = pNodeReporter   @ NewConsole = false
   Run = pMarineViewer   @ NewConsole = false
   Run = uMS             @ NewConsole = false
+  Run = pLatLongToLamb  @ NewConsole = true
 
   // *************** INTERFACE ****************
-  // Run = iInsSBG         @ NewConsole = true
+  // Run = iInsSBG         @ NewConsole = false
   // Run = iSounder        @ NewConsole = false
   // Run = iGPS            @ NewConsole = false
   

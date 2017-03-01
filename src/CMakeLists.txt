@@ -23,6 +23,7 @@ ADD_SUBDIRECTORY(iInsSBG)
 ADD_SUBDIRECTORY(pCustomLogger)
 
 ADD_SUBDIRECTORY(lib)
+ADD_SUBDIRECTORY(lib_behavior_groupe3_guerledan)
 
 ##############################################################################
 #                           END of CMakeLists.txt

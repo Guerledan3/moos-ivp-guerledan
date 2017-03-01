@@ -1,0 +1,10 @@
+.bashrc :
+
+# moos-ivp
+export PATH=$PATH:~/moos-ivp/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/moos-ivp/lib
+export PATH=$PATH:~/moos-ivp-extend/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/moos-ivp-extend/lib
+export IVP_BEHAVIOR_DIRS=~/moos-ivp-guerledan/lib
+# python-moos
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3/dist-packages

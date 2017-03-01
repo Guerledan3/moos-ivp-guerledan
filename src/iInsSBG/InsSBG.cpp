@@ -96,16 +96,16 @@ bool InsSBG::Iterate()
     reportConfigWarning("Test");
     if(new_ekf){
       new_ekf = false;
-      //Notify("NAV_ROLL", roll);
-      //Notify("NAV_PITCH", pitch);
-      //Notify("NAV_YAW", yaw);
+      // Notify("NAV_INS_ROLL", roll);
+      // Notify("NAV_INS_PITCH", pitch);
+      // Notify("NAV_INS_YAW", yaw);
       Notify_attitude(&roll, &pitch, &yaw);
     }
     if(new_nav){
       new_nav = false;
-      //Notify("NAV_LAT", latitude);  // to be remplaced by NAV_INS_*
-      //Notify("NAV_LONG", longitude);
-      //Notify("NAV_DEPTH", -altitude);
+      // Notify("NAV_INS_LAT", latitude);  // to be remplaced by NAV_INS_*
+      // Notify("NAV_INS_LONG", longitude);
+      // Notify("NAV_INS_DEPTH", -altitude);
       Notify_pose(&latitude, &longitude, &altitude);
     }
     if(new_time){
@@ -376,19 +376,19 @@ int InsSBG::newPose(string pose){
 
 bool InsSBG::Notify_attitude(float *roll, float *pitch, float *yaw){
   string msg;
-  //msg += doubleToString(MOOStime()) + " ";
-  msg += doubleToString(*roll, 3) + " ";
-  msg += doubleToString(*pitch, 3) + " ";
-  msg += doubleToString(*yaw, 3);
+  msg += "TIME=" + doubleToString(MOOS::Time()) + ",";
+  msg += "ROLL=" + doubleToString(*roll, 6) + ",";
+  msg += "PITCH=" + doubleToString(*pitch, 6) + ",";
+  msg += "YAW=" + doubleToString(*yaw, 6);
   Notify("INS_EULER", msg);
   return true;
 }
 bool InsSBG::Notify_pose(float *lat, float *lon, float *altitude){
   string msg;
-  //msg += doubleToString(MOOStime()) + " ";
-  msg += doubleToString(*lat, 6) + " ";
-  msg += doubleToString(*lon, 6) + " ";
-  msg += doubleToString(*altitude, 2) + " ";
+  msg += "TIME=" + doubleToString(MOOS::Time()) + ",";
+  msg += "LAT=" + doubleToString(*lat, 6) + ",";
+  msg += "LON=" + doubleToString(*lon, 6) + ",";
+  msg += "ALT=" + doubleToString(*altitude, 6);
   Notify("INS_NAV", msg);
   return true;
 }

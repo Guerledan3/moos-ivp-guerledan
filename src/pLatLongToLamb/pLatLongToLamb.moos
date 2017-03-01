@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pLatLongToLamb config block
+
+ProcessConfig = pLatLongToLamb
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

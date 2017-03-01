@@ -27,7 +27,7 @@ ProcessConfig = ANTLER
 
   Run = iInsSBG               @ NewConsole = true
   //Run = iSounder              @ NewConsole = false
-  //Run = iGPS                  @ NewConsole = false
+  Run = iGPS                  @ NewConsole = false
   //Run = pLogger               @ NewConsole = false
   
 }
@@ -65,7 +65,7 @@ ProcessConfig = iInsSBG
    AppTick   = 25
    CommsTick = 25
 
-   UART_PORT = /dev/ttyUSB0
+   UART_PORT = /dev/ttyUSB1
    UART_BAUD_RATE = 115200
 }
 
@@ -74,8 +74,8 @@ ProcessConfig = iGPS
   AppTick   = 25
   CommsTick = 25
 
-  SERIAL_PORT = /dev/gps
-  UART_BAUD_RATE = 115200
+  SERIAL_PORT = /dev/ttyUSB0
+  UART_BAUD_RATE = 9600
 }
 
 ProcessConfig = pLogger

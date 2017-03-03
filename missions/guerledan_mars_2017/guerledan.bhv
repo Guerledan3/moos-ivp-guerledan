@@ -1,0 +1,5 @@
+Behavior=BHV_Main
+  {
+    name       = main
+    pwt        = 100
+  }

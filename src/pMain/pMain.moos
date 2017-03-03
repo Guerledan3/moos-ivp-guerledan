@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pMain config block
+
+ProcessConfig = pMain
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

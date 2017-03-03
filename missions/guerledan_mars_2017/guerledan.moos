@@ -1,6 +1,7 @@
 ServerHost = localhost
 ServerPort = 9000
-Community  = AUV
+Community  = Guerledan3
+
 
 LatOrigin  = 48.198334
 LongOrigin = -3.014402
@@ -10,30 +11,29 @@ ProcessConfig = ANTLER
   MSBetweenLaunches = 200
 	
   Run = MOOSDB            @ NewConsole = false
-
-  // ***************** CONTROL ****************
-
   Run = pMarineViewer         @ NewConsole = false
   Run = iInsSBG               @ NewConsole = false
   Run = iSounder              @ NewConsole = false
   Run = iGPS                  @ NewConsole = false
   Run = pLogger               @ NewConsole = false
 
-  // ***************** PROCESS ****************
-  Run = pHelmIvP        @ NewConsole = false
+  //Run = pHelmIvP        @ NewConsole = false
+
+  
 }
 
-
+/*
 ProcessConfig = pHelmIvP
 {
   AppTick    = 4
   CommsTick  = 4
 
   behaviors  = guerledan.bhv
+  ivp_behavior_dir = ~/moos-ivp-extend/lib
 
-  ivp_behavior_dir = ~/Documents/Guerlédan/Guerledan_Git/moos-ivp-guerledan/lib
-}
-
+  domain     = course:0:359:360
+  domain     = speed:0:4:21
+}*/
 
 ProcessConfig = pMarineViewer
 {
@@ -119,7 +119,7 @@ ProcessConfig = pLogger
   Log = INS_gpsTimeOfWeek @ 0$
 
 }
-
+/*
 ProcessConfig = pCustomLogger
 {
    AppTick   = 25
@@ -127,4 +127,4 @@ ProcessConfig = pCustomLogger
 
    PATH=/home/
    FILE=name=All,watch=GPS_LAT/GPS_LONG/GPS_ELE/INS_EULER/INS_NAV/Sounder_RANGE/GPS_RAW_NMEA/GPS_SIG/GPS_FIX/INS_gpsTimeOfWeek
-}
+}*/

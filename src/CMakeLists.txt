@@ -20,11 +20,12 @@ add_definitions(${CMAKE_CXX_FLAGS})
 ADD_SUBDIRECTORY(iSounder)
 ADD_SUBDIRECTORY(iGPS)
 ADD_SUBDIRECTORY(iInsSBG)
-ADD_SUBDIRECTORY(pCustomLogger)
-ADD_SUBDIRECTORY(pLatLongToLamb)
+#ADD_SUBDIRECTORY(pCustomLogger)
+#ADD_SUBDIRECTORY(pLatLongToLamb)
 
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(lib_behavior_groupe3_guerledan)
+ADD_SUBDIRECTORY(pMain)
 
 ##############################################################################
 #                           END of CMakeLists.txt

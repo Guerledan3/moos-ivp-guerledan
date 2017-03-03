@@ -30,18 +30,3 @@ MACRO(ADD_BHV BHV_NAME)
 ENDMACRO(ADD_BHV)
 
 
- #--------------------------------------------------------
- #                                      BHV_Main
- #--------------------------------------------------------
- ADD_LIBRARY(BHV_Main SHARED 
-    BHV_Main.cpp)
- TARGET_LINK_LIBRARIES(BHV_Main
-    helmivp
-    behaviors 
-    ivpbuild 
-    logic 
-    ivpcore 
-    bhvutil 
-    mbutil 
-    geometry 
-    ${SYSTEM_LIBS} )

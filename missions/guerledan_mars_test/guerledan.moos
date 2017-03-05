@@ -96,7 +96,7 @@ ProcessConfig = pMarineViewer
   trails_connect_viewable = true
 
   button_one = Lancement # LANCEMENT=true # MOOS_MANUAL_OVERRIDE=false
-  
+  button_two = Arrêt # LANCEMENT=false # MOOS_MANUAL_OVERRIDE=false
 }
 
 ProcessConfig = uSimMarine

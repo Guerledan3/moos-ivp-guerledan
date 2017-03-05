@@ -9,6 +9,7 @@
 #define Main_HEADER
 
 #include "MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h"
+using namespace std;
 
 class Main : public AppCastingMOOSApp
 {
@@ -35,7 +36,15 @@ class Main : public AppCastingMOOSApp
  private: // State variables
    int mode;
    int motif_courant;
-   int ligne_courante;
+   int paire_ligne_courante;
+   double ligne_courante;
+
+   string ligne1;
+   string ligne2;
+   string spaire;
+
+   double waypoint;
+   string logline;
 
    bool fin_leve;
    bool lancement;

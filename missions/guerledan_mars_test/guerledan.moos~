@@ -80,7 +80,7 @@ ProcessConfig = pMarinePID
 
 ProcessConfig = pMarineViewer
 {
-  AppTick   = 4
+  AppTick   = 25
   CommsTick = 4
 
   tiff_file = guerledan.tif

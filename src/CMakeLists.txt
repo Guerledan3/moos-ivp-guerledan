@@ -25,6 +25,8 @@ ADD_SUBDIRECTORY(pLatLongToLamb)
 ADD_SUBDIRECTORY(pLogLine)
 
 ADD_SUBDIRECTORY(lib)
+ADD_SUBDIRECTORY(lib_behavior_groupe3_guerledan)
+ADD_SUBDIRECTORY(pMain)
 
 ##############################################################################
 #                           END of CMakeLists.txt

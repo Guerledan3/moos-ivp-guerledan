@@ -1,0 +1,23 @@
+initialize FIN_LEVE = false
+initialize RETOUR_QC = 0.0
+initialize LANCEMENT = false
+initialize LIGNE_COURANTE = 0.0
+initialize LOGLINE = stop
+
+Behavior = BHV_Waypoint
+{ 
+  name      = waypt_
+  pwt       = 100
+  condition = LANCEMENT = true
+  
+  speed     = 5.0
+
+  updates = WAYPT_UPDATE
+  templating = spawn
+
+  points = 0,0
+
+  capture_line = true
+  lead = 10
+}
+

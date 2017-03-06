@@ -8,7 +8,6 @@
 #============================================================================
 # Add the libraries in the current directory to the include path
 #============================================================================
-set(CMAKE_CXX_STANDARD 11)
 FILE(GLOB LOCAL_LIBRARY_DIRS ./lib_* ./lib ./lib_*/lib ./lib_*/include)
 INCLUDE_DIRECTORIES(${LOCAL_LIBRARY_DIRS})
 LINK_DIRECTORIES(${LOCAL_LIBRARY_DIRS})
@@ -22,9 +21,11 @@ ADD_SUBDIRECTORY(iSounder)
 ADD_SUBDIRECTORY(iGPS)
 ADD_SUBDIRECTORY(iInsSBG)
 ADD_SUBDIRECTORY(pCustomLogger)
-# ADD_SUBDIRECTORY(pLatLon2LocalGrid)
+ADD_SUBDIRECTORY(pLatLongToLamb)
 
 ADD_SUBDIRECTORY(lib)
+ADD_SUBDIRECTORY(lib_behavior_groupe3_guerledan)
+ADD_SUBDIRECTORY(pMain)
 
 ##############################################################################
 #                           END of CMakeLists.txt

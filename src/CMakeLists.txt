@@ -18,10 +18,16 @@ add_definitions(${CMAKE_CXX_FLAGS})
 # List the subdirectories to build...
 #============================================================================
 ADD_SUBDIRECTORY(iSounder)
+<<<<<<< HEAD
 #ADD_SUBDIRECTORY(iGPS)
 #ADD_SUBDIRECTORY(iInsSBG)
 #ADD_SUBDIRECTORY(pCustomLogger)
 #ADD_SUBDIRECTORY(pLatLon2LocalGrid)
+=======
+ADD_SUBDIRECTORY(iGPS)
+ADD_SUBDIRECTORY(iInsSBG)
+ADD_SUBDIRECTORY(pCustomLogger)
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 ADD_SUBDIRECTORY(pLatLongToLamb)
 ADD_SUBDIRECTORY(pLogLine)
 

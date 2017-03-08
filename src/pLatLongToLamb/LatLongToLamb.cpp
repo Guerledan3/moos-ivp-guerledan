@@ -84,8 +84,11 @@ bool LatLongToLamb::OnNewMail(MOOSMSG_LIST &NewMail)
       msg_str += "Y=" + doubleToString(lat, 6) + ",";
       msg_str += "Z=" + doubleToString(ele, 6);
       Notify("GPS_NAV_LAMB", msg_str);
+<<<<<<< HEAD
       Notify("NAV_X", lon-253559.1325078258);
       Notify("NAV_Y", lat-6805674.85861476);
+=======
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
      }
      else if(key != "APPCAST_REQ") // handle by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);

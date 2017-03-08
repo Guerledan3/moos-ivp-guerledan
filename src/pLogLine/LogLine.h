@@ -56,6 +56,7 @@ class LogLine : public AppCastingMOOSApp
  	int current_line;
  	int num_line;
 
+<<<<<<< HEAD
 	std::string last_msg;
 
  	std::string save_prefix;
@@ -63,6 +64,10 @@ class LogLine : public AppCastingMOOSApp
 
  	std::string saveData();
  	std::string saveDataInterp();
+=======
+ 	void saveData();
+ 	void saveDataInterp();
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 	void clearData();
 };
 

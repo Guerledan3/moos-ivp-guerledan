@@ -1,0 +1,33 @@
+Community  = boat
+ServerHost = localhost
+ServerPort = 9000
+
+LatOrigin  = 48.3909425
+LongOrigin = -4.4346433
+
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 400
+
+  Run = MOOSDB          @ NewConsole = false
+
+  Run = iInsSBG         @ NewConsole = false
+  Run = pLatLongToLamb  @ NewConsole = false
+  Run = uMS
+}
+
+ProcessConfig = iInsSBG
+{
+   AppTick   = 100
+   CommsTick = 100
+
+   UART_PORT = /dev/ttyUSB0
+   UART_BAUD_RATE = 115200
+}
+
+ProcessConfig = pLatLongToLamb
+{
+  AppTick   = 100
+  CommsTick = 100
+
+}

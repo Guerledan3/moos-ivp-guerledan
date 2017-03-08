@@ -22,8 +22,11 @@ using namespace std;
 
 LogLine::LogLine()
 {
+<<<<<<< HEAD
   save_prefix = "/home/guerledan3/Save";
   archive_prefix = "/home/guerledan3/Archive";
+=======
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 }
 
 //---------------------------------------------------------
@@ -49,6 +52,7 @@ bool LogLine::OnNewMail(MOOSMSG_LIST &NewMail)
 #endif
      if(key == "LOGLINE"){
       string str = msg.GetString();
+<<<<<<< HEAD
       last_msg = str;
       if(str == "stop"){
         recording = false;
@@ -57,6 +61,13 @@ bool LogLine::OnNewMail(MOOSMSG_LIST &NewMail)
         string filename = saveData();
         Notify("LINELOGGED", filename);
         
+=======
+      if(str == "stop"){
+        recording = false;
+        // Save everything in a file
+        saveDataInterp();
+        saveData();
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
         // Empty saved data
         clearData();
         
@@ -75,7 +86,11 @@ bool LogLine::OnNewMail(MOOSMSG_LIST &NewMail)
         recording = true;
         num_line = 0;
         time_start = msg.GetTime();
+<<<<<<< HEAD
         MOOSValFromString(current_line, str, "INIT");
+=======
+        MOOSValFromString(current_line, str, "init");
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
       }
      }
      else if(recording && key == "GPS_NAV_LAMB"){
@@ -178,12 +193,19 @@ bool LogLine::OnStartUp()
     string value = line;
 
     bool handled = false;
+<<<<<<< HEAD
     if(param == "SAVE_FOLDER") {
       save_prefix = value;
       handled = true;
     }
     else if(param == "ARCHIVE_FOLDER") {
       archive_prefix = value;
+=======
+    if(param == "FOO") {
+      handled = true;
+    }
+    else if(param == "BAR") {
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
       handled = true;
     }
 
@@ -203,7 +225,10 @@ void LogLine::registerVariables()
 {
   AppCastingMOOSApp::RegisterVariables();
   // Register("FOOBAR", 0);
+<<<<<<< HEAD
   Register("LOGLINE",0);
+=======
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
   Register("GPS_NAV_LAMB", 0);
   Register("INS_NAV_LAMB", 0);
   Register("INS_EULER", 0);
@@ -222,16 +247,28 @@ bool LogLine::buildReport()
   m_msgs << "File:                                        \n";
   m_msgs << "============================================ \n";
 
+<<<<<<< HEAD
   m_msgs << "MSG Received : " << last_msg << "\n";
   m_msgs << "Euler : " << ins_euler.size() << "\n";
   m_msgs << "EEuler : " << ins_eeuler.size() << "\n";
   m_msgs << "Ins Nav : " << ins_nav.size() << "\n";
   m_msgs << "Gps Nav : " << gps_nav.size() << "\n";
+=======
+  ACTable actab(4);
+  actab << "Alpha | Bravo | Charlie | Delta";
+  actab.addHeaderLines();
+  actab << "one" << "two" << "three" << "four";
+  m_msgs << actab.getFormattedString();
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 
   return(true);
 }
 
+<<<<<<< HEAD
 string LogLine::saveDataInterp(){
+=======
+void LogLine::saveData(){
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
   // Time
   time_t rawtime;
   struct tm * timeinfo;
@@ -243,6 +280,7 @@ string LogLine::saveDataInterp(){
   ofstream archive_file;
 
   stringstream filename_save;
+<<<<<<< HEAD
   filename_save << save_prefix  << "/ins/F" << current_line << ".txt";
   save_file.open(filename_save.str().c_str(), ios::out | ios::trunc);
 
@@ -252,6 +290,14 @@ string LogLine::saveDataInterp(){
 
   save_file << setprecision(14);
   archive_file << setprecision(14);
+=======
+  filename_save << "/home/Lines/F" << current_line << ".txt";
+  save_file.open(filename_save.str().c_str(), ios::trunc);
+
+  stringstream filename_archive;
+  filename_archive << "_Time_" << asctime(timeinfo) << ".txt";
+  archive_file.open(filename_archive.str().c_str(), ios::trunc);
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 
   for(std::map<double, double>::iterator it = sounder_range.begin(); it != sounder_range.end(); ++it){
     double t = it->first;
@@ -320,7 +366,11 @@ string LogLine::saveDataInterp(){
 
 }
 
+<<<<<<< HEAD
 string LogLine::saveData(){
+=======
+void LogLine::saveDataInterp(){
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
   // Time
   time_t rawtime;
   struct tm * timeinfo;
@@ -332,6 +382,7 @@ string LogLine::saveData(){
   ofstream archive_file;
 
   stringstream filename_save;
+<<<<<<< HEAD
   filename_save << save_prefix << "/F" << current_line << ".txt";
   save_file.open(filename_save.str().c_str(), ios::out | ios::trunc);
   last_msg = filename_save.str();
@@ -341,6 +392,14 @@ string LogLine::saveData(){
 
   save_file << setprecision(14);
   archive_file << setprecision(14);
+=======
+  filename_save << "/home/Lines/F" << current_line << ".txt";
+  save_file.open(filename_save.str().c_str(), ios::trunc);
+
+  stringstream filename_archive;
+  filename_archive << "_Time_" << asctime(timeinfo) << ".txt";
+  archive_file.open(filename_archive.str().c_str(), ios::trunc);
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 
   for(std::map<double, double>::iterator it = sounder_range.begin(); it != sounder_range.end(); ++it){
     double t = it->first;
@@ -407,7 +466,10 @@ string LogLine::saveData(){
   save_file.close(); 
   archive_file.close();
 
+<<<<<<< HEAD
   return filename_save.str();
+=======
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020
 }
 
 void LogLine::clearData(){
@@ -417,4 +479,8 @@ void LogLine::clearData(){
   ins_euler.clear();
   ins_eeuler.clear();
   sounder_range.clear();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b2535f1d9f6634a86238c984a12ed1349f448020

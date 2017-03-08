@@ -115,9 +115,9 @@ bool GPS::Iterate() {
 
         // Formated notify
         stringstream gps_ss;
-        gps_ss << "TIME=" << MOOS::Time() << "GPS_LAT=" << m_lat << ",GPS_LONG=" << m_lon << ",GPS_ELE=" << m_ele << ",GPS_SPEED=" << m_speed << ",GPS_HEADING=" << m_heading << ",GPS_FIX=" << m_fix << ",GPS_SIG=" << m_sig;
-        printf("%s\n", gps_ss.str().c_str());
-        Notify("GPS", gps_ss.str());
+        gps_ss << "TIME=" << setprecision(13) << MOOS::Time() << ",LAT=" << m_lat << ",LON=" << m_lon << ",ELE=" << m_ele;
+        //printf("%s\n", gps_ss.str().c_str());
+        Notify("GPS_NAV", gps_ss.str());
 
 
     } else if (m_error.value() == 2.0) {
@@ -217,15 +217,6 @@ bool GPS::buildReport() {
   m_msgs << actab.getFormattedString();
 
   return true;
-}
-
-bool GPS::Notify_GNSS(float *lat, float *lon) {
-    string msg;
-    msg += "LAT=" + doubleToString(*lat, GPS_PRECISION) + ",";
-    msg += "LON=" + doubleToString(*lon, GPS_PRECISION);
-    Notify("GPS_NAV", msg);
-
-    return true;
 }
 
 // reportEvent("Good msg received: " + message);

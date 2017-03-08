@@ -39,9 +39,6 @@ class GPS : public AppCastingMOOSApp
     bool buildReport();
     void registerVariables();
 
-  private:
-    bool Notify_GNSS(float *lat, float *lon);
-
   private: // Configuration variables
     std::string   m_uart_port;
     int           m_uart_baud_rate;

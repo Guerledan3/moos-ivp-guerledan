@@ -38,6 +38,7 @@ class Main : public AppCastingMOOSApp
    int motif_courant;
    int paire_ligne_courante;
    double ligne_courante;
+   bool tout_a_refaire;
 
    string ligne1;
    string ligne2;
@@ -48,9 +49,20 @@ class Main : public AppCastingMOOSApp
 
    bool fin_leve;
    bool lancement;
-   double retour_qc;
+   string retour_qc;
 
    double current_time;
+
+   string retry;
+   
+   string linelogged;
+   string last_validate;
+   int num_last_validate;
+
+   int K1;
+   int K2;
+   int K3;
+   int K4;
 };
 
 #endif 

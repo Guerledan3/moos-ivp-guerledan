@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/iSounder.dir/Sounder.cpp.o CMakeFiles/iSounder.dir/main.cpp.o  -o iSounder -rdynamic -lxml-documentation -lapputil -lmbutil -lm -lpthread 

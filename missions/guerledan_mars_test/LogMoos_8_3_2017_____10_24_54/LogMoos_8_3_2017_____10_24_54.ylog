@@ -1,0 +1,9 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_8_3_2017_____10_24_54/LogMoos_8_3_2017_____10_24_54.ylog
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1488965094.32
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-1.90387   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: ManualOverride 
+26.63418   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+26.8857    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: BehaviorError 
+27.13635   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 

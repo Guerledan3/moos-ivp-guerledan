@@ -1,0 +1,45 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_8_3_2017_____15_41_23/LogMoos_8_3_2017_____15_41_23.ylog
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1488984082.36
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-1.895144  MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: ManualOverride 
+638.3647   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: BehaviorError 
+638.6148   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+978.4746   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+978.7258   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1109.047   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1109.298   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1110.301   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1297.273   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1297.524   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1433.349   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1433.6     MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1434.353   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1569.429   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1569.68    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1663.924   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1664.174   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1664.926   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1822.059   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1822.31    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1945.612   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1945.863   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+1946.615   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2108.768   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2109.019   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2234.086   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2234.336   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2235.089   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2403.767   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2404.018   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2509.537   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2509.788   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2510.54    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2675.939   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2676.189   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2791.725   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2791.975   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2792.726   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+2799.742   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2799.994   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 

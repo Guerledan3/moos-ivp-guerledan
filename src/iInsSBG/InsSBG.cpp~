@@ -5,6 +5,8 @@
 /*    DATE:                                                 */
 /************************************************************/
 
+
+
 #include <iterator>
 #include "MBUtils.h"
 #include "ACTable.h"
@@ -21,12 +23,17 @@ InsSBG::InsSBG()
   pitch = 0.0;
   roll = 0.0;
 
+  e_yaw = 0.0;
+  e_pitch = 0.0;
+  e_roll = 0.0;  
+
   longitude = 0.0;
   latitude = 0.0;
   altitude = 0.0;
 
   new_ekf = 0;
   new_nav = 0;
+  new_std = 0;
 }
 
 InsSBG::~InsSBG()
@@ -94,29 +101,33 @@ bool InsSBG::Iterate()
     reportConfigWarning("Test");
     if(new_ekf){
       new_ekf = false;
-      Notify("NAV_ROLL", roll);
-      Notify("NAV_PITCH", pitch);
-      Notify("NAV_YAW", yaw);
-      //Notify_attitude(&roll, &pitch, &yaw);
+      // Notify("NAV_INS_ROLL", roll);
+      // Notify("NAV_INS_PITCH", pitch);
+      Notify("NAV_HEADING", yaw);
+      Notify_attitude(&roll, &pitch, &yaw);
     }
     if(new_nav){
       new_nav = false;
-      Notify("NAV_LAT", latitude);  // to be remplaced by NAV_INS_*
-      Notify("NAV_LONG", longitude);
-      Notify("NAV_DEPTH", -altitude);
-      //Notify_pose(&latitude, &longitude, &altitude);
+      // Notify("NAV_INS_LAT", latitude);  // to be remplaced by NAV_INS_*
+      // Notify("NAV_INS_LONG", longitude);
+      // Notify("NAV_INS_DEPTH", -altitude);
+      Notify_pose(&latitude, &longitude, &altitude);
     }
-    // if(new_time){
-    //   new_time = false;
-    //   Notify("INS_year", year);
-    //   Notify("INS_month", month);
-    //   Notify("INS_day", day);
-    //   Notify("INS_hour", hour);
-    //   Notify("INS_minute", minute);
-    //   Notify("INS_second", second);
-    //   Notify("INS_nanoSecond", nanoSecond);
-    //   Notify("INS_gpsTimeOfWeek", gpsTimeOfWeek);
-    // }
+    if(new_std){
+      new_std = false;
+      Notify_attitude_std(&e_roll, &e_pitch, &e_yaw);
+    }
+    if(new_time){
+      new_time = false;
+      Notify("INS_year", year);
+      Notify("INS_month", month);
+      Notify("INS_day", day);
+      Notify("INS_hour", hour);
+      Notify("INS_minute", minute);
+      Notify("INS_second", second);
+      Notify("INS_nanoSecond", nanoSecond);
+      Notify("INS_gpsTimeOfWeek", gpsTimeOfWeek);
+    }
   // }
   // else{
       // reportRunWarning("SBG NOT READY");
@@ -234,33 +245,33 @@ bool InsSBG::OnStartUp()
    // reportEvent("ComModelInfo : revision =" + string(revision));
 
   // GNSS : Initial position
-  SbgEComInitConditionConf sbgEComInitConditionConf;
-  sbgEComInitConditionConf.latitude  = 47.788295;
-  sbgEComInitConditionConf.longitude = -3.334517;
-  sbgEComInitConditionConf.altitude  = 0.0;
-  sbgEComInitConditionConf.year      = 2016;
-  sbgEComInitConditionConf.month     = 10;
-  sbgEComInitConditionConf.day       = 17;
-  errorCode = sbgEComCmdSensorSetInitCondition(&comHandle, &sbgEComInitConditionConf);
-  if (errorCode != SBG_NO_ERROR){reportConfigWarning("sbgEComCmdSensorSetInitCondition Error");}
+  // SbgEComInitConditionConf sbgEComInitConditionConf;
+  // sbgEComInitConditionConf.latitude  = 47.788295;
+  // sbgEComInitConditionConf.longitude = -3.334517;
+  // sbgEComInitConditionConf.altitude  = 0.0;
+  // sbgEComInitConditionConf.year      = 2016;
+  // sbgEComInitConditionConf.month     = 10;
+  // sbgEComInitConditionConf.day       = 19;
+  // errorCode = sbgEComCmdSensorSetInitCondition(&comHandle, &sbgEComInitConditionConf);
+  // if (errorCode != SBG_NO_ERROR){reportConfigWarning("sbgEComCmdSensorSetInitCondition Error");}
 
   // GNSS : Port config
-  SbgEComAidingAssignConf sbgEComAidingAssignConf;
-  sbgEComAidingAssignConf.gps1Port         = SBG_ECOM_MODULE_PORT_C;
-  sbgEComAidingAssignConf.gps1Sync         = SBG_ECOM_MODULE_SYNC_DISABLED;
-  sbgEComAidingAssignConf.rtcmPort         = SBG_ECOM_MODULE_DISABLED;
-  sbgEComAidingAssignConf.odometerPinsConf = SBG_ECOM_MODULE_ODO_DISABLED;
-  errorCode = sbgEComCmdSensorSetAidingAssignment(&comHandle, &sbgEComAidingAssignConf);
-  if (errorCode != SBG_NO_ERROR){reportConfigWarning("sbgEComAidingAssignConf Error");}
+  //SbgEComAidingAssignConf sbgEComAidingAssignConf;
+  //sbgEComAidingAssignConf.gps1Port         = SBG_ECOM_MODULE_PORT_C;
+  //sbgEComAidingAssignConf.gps1Sync         = SBG_ECOM_MODULE_SYNC_DISABLED;
+  //sbgEComAidingAssignConf.rtcmPort         = SBG_ECOM_MODULE_DISABLED;
+  //sbgEComAidingAssignConf.odometerPinsConf = SBG_ECOM_MODULE_ODO_DISABLED;
+  //errorCode = sbgEComCmdSensorSetAidingAssignment(&comHandle, &sbgEComAidingAssignConf);
+  //if (errorCode != SBG_NO_ERROR){reportConfigWarning("sbgEComAidingAssignConf Error");}
 
   // GNSS : Rejection mode config
-  SbgEComGnssRejectionConf sbgEComGnssRejectionConf;
-  sbgEComGnssRejectionConf.position = SBG_ECOM_AUTOMATIC_MODE; // SBG_ECOM_AUTOMATIC_MODE, SBG_ECOM_ALWAYS_ACCEPT_MODE, SBG_ECOM_NEVER_ACCEPT_MODE
-  sbgEComGnssRejectionConf.velocity = SBG_ECOM_AUTOMATIC_MODE;
-  sbgEComGnssRejectionConf.course   = SBG_ECOM_AUTOMATIC_MODE;
-  sbgEComGnssRejectionConf.hdt      = SBG_ECOM_AUTOMATIC_MODE;
-  errorCode = sbgEComCmdGnss1SetRejection(&comHandle, &sbgEComGnssRejectionConf);
-  if (errorCode != SBG_NO_ERROR){reportConfigWarning("sbgEComAidingAssignConf Error");}
+  //SbgEComGnssRejectionConf sbgEComGnssRejectionConf;
+  //sbgEComGnssRejectionConf.position = SBG_ECOM_AUTOMATIC_MODE; // SBG_ECOM_AUTOMATIC_MODE, SBG_ECOM_ALWAYS_ACCEPT_MODE, SBG_ECOM_NEVER_ACCEPT_MODE
+  //sbgEComGnssRejectionConf.velocity = SBG_ECOM_AUTOMATIC_MODE;
+  //sbgEComGnssRejectionConf.course   = SBG_ECOM_AUTOMATIC_MODE;
+  //sbgEComGnssRejectionConf.hdt      = SBG_ECOM_AUTOMATIC_MODE;
+  //errorCode = sbgEComCmdGnss1SetRejection(&comHandle, &sbgEComGnssRejectionConf);
+  //if (errorCode != SBG_NO_ERROR){reportConfigWarning("sbgEComAidingAssignConf Error");}
 
   // MAGNETIC config
   // SbgEComMagRejectionConf sbgEComMagRejectionConf;
@@ -299,8 +310,15 @@ void InsSBG::registerVariables()
 //------------------------------------------------------------
 // Procedure: buildReport()
 
-bool InsSBG::buildReport() 
+bool InsSBG::buildReport()
 {
+  ACTable actab(6);
+  actab << "Lat | Long | Ele | Roll | Pitch | Yaw";
+  actab.addHeaderLines();
+
+  actab << latitude << longitude << altitude << roll << pitch << yaw;
+  m_msgs << actab.getFormattedString();
+
   return(true);
 }
 
@@ -322,17 +340,23 @@ SbgErrorCode InsSBG::onLogReceived(SbgEComHandle *pHandle, SbgEComCmdId logCmd, 
       pInsSBG->longitude = pLogData->ekfNavData.position[1];
       pInsSBG->altitude  = pLogData->ekfNavData.position[2];
       break;
-    // case SBG_ECOM_LOG_UTC_TIME:
-    //   pInsSBG->new_time = true;
-    //   pInsSBG->year          = pLogData->utcData.year;
-    //   pInsSBG->month         = pLogData->utcData.month;
-    //   pInsSBG->day           = pLogData->utcData.day;
-    //   pInsSBG->hour          = pLogData->utcData.hour;
-    //   pInsSBG->minute        = pLogData->utcData.minute;
-    //   pInsSBG->second        = pLogData->utcData.second;
-    //   pInsSBG->nanoSecond    = pLogData->utcData.nanoSecond;
-    //   pInsSBG->gpsTimeOfWeek = pLogData->utcData.gpsTimeOfWeek;
-      // break;
+    case SBG_ECOM_LOG_EKF_QUAT:
+      pInsSBG->new_std = true;
+      pInsSBG->e_roll    = pLogData->ekfQuatData.eulerStdDev[0];
+      pInsSBG->e_pitch   = pLogData->ekfQuatData.eulerStdDev[1];
+      pInsSBG->e_yaw     = pLogData->ekfQuatData.eulerStdDev[2];
+      break;
+    case SBG_ECOM_LOG_UTC_TIME:
+      pInsSBG->new_time = true;
+      pInsSBG->year          = pLogData->utcData.year;
+      pInsSBG->month         = pLogData->utcData.month;
+      pInsSBG->day           = pLogData->utcData.day;
+      pInsSBG->hour          = pLogData->utcData.hour;
+      pInsSBG->minute        = pLogData->utcData.minute;
+      pInsSBG->second        = pLogData->utcData.second;
+      pInsSBG->nanoSecond    = pLogData->utcData.nanoSecond;
+      pInsSBG->gpsTimeOfWeek = pLogData->utcData.gpsTimeOfWeek;
+      break;
     default:
       break;
   }
@@ -372,23 +396,33 @@ int InsSBG::newPose(string pose){
 }
 
 
-// bool InsSBG::Notify_attitude(float *roll, float *pitch, float *yaw){
-//   string msg;
-//   msg += "ROLL=" +  doubleToString(*roll, 3) + ",";
-//   msg += "PITCH=" +  doubleToString(*pitch, 3) + ",";
-//   msg += "YAW=" +  doubleToString(*yaw, 3);
-//   Notify("INS_EULER", msg);
-//   return true;
-// }
-
-// bool InsSBG::Notify_pose(float *lat, float *lon, float *altitude){
-//   string msg;
-//   msg += "LATITUDE=" +  doubleToString(*lat, 6) + ",";
-//   msg += "LONGITUDE=" +  doubleToString(*lon, 6) + ",";
-//   msg += "ALTITUDE=" +  doubleToString(*altitude, 2);
-//   Notify("INS_NAV", msg);
-//   return true;
-// }
+bool InsSBG::Notify_attitude(float *roll, float *pitch, float *yaw){
+  string msg;
+  msg += "TIME=" + doubleToString(MOOS::Time()) + ",";
+  msg += "ROLL=" + doubleToString(*roll, 6) + ",";
+  msg += "PITCH=" + doubleToString(*pitch, 6) + ",";
+  msg += "YAW=" + doubleToString(*yaw, 6);
+  Notify("INS_EULER", msg);
+  return true;
+}
+bool InsSBG::Notify_attitude_std(float *e_roll, float *e_pitch, float *e_yaw){
+  string msg;
+  msg += "TIME=" + doubleToString(MOOS::Time()) + ",";
+  msg += "EROLL=" + doubleToString(*e_roll, 6) + ",";
+  msg += "EPITCH=" + doubleToString(*e_pitch, 6) + ",";
+  msg += "EYAW=" + doubleToString(*e_yaw, 6);
+  Notify("INS_EEULER", msg);
+  return true;
+}
+bool InsSBG::Notify_pose(float *lat, float *lon, float *altitude){
+  string msg;
+  msg += "TIME=" + doubleToString(MOOS::Time()) + ",";
+  msg += "LAT=" + doubleToString(*lat, 6) + ",";
+  msg += "LON=" + doubleToString(*lon, 6) + ",";
+  msg += "ALT=" + doubleToString(*altitude, 6);
+  Notify("INS_NAV", msg);
+  return true;
+}
 
 // reportEvent("Good msg received: " + message);
 // reportRunWarning("Bad msg received: " + message);

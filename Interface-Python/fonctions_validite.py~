@@ -1,0 +1,164 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb 21 09:56:23 2017
+
+@author: lebretla
+"""
+
+
+"""
+===============================================================================
+OBJECTIF 
+===============================================================================
+Verifier la validite des sondes et créer un fichier ne contenant que les sondes 
+validees
+
+===============================================================================
+DESCRIPTION 
+===============================================================================
+2 etapes majeurs : 
+    - test sonde par sonde des donnes GPS et SBG 
+    - test par voisin des donnees sondeur
+
+===============================================================================    
+ENTREE 
+===============================================================================
+    - 1 fichier contenant 2 lignes de navigation selon le format définit 
+      initialement
+    - seuils pour les biais de la SBG : liste à 3 entrées
+    - nombre de voisins à considerer pour le filtre des sondes : chiffre
+      multiplie par 2 dans l'algorithme
+    
+===============================================================================    
+SORTIE
+===============================================================================
+Enregistrement d'un fichier : X|Y|H93|NumLign|EtatLigne
+dans une direction !!!! A DEFINIR !!!! dans creation_fichier_sortie 
+"""
+
+
+#bibliothèque nécessaire pour la gestion des noms
+from os.path import basename, splitext
+
+#=============================================================================#
+#                   Appel des fonctions de validation 
+#=============================================================================#
+def Validation_des_sondes(fichier,seuil_SBG,nb_voisins):
+    
+    # TEST GPS ET SBG : on parcourt le fichier sondes pas sondes
+    Liste_validee_GPS_SBG = validite_GPS_and_SBG(fichier,seuil_SBG) 
+        
+    # TEST SONDEUR : on applique un filtre median sur toute la liste de sortie
+    liste_validee = validite_SONDEUR_bathy2(Liste_validee_GPS_SBG,nb_voisins)
+    
+    # ECRITURE dans un fichier de sortie
+    creation_fichier_sortie(fichier,liste_validee)
+    return filename
+
+
+#=============================================================================#
+#                   Mise en place des fonctions utilisées   
+#=============================================================================# 
+
+#-----------------------------------------------------------------------------#
+# FONCTION qui test la validite du GPS 
+def validite_GPS(line):
+    if line[7]=='4' :
+        return 1
+    else :
+        return 0
+    
+#-----------------------------------------------------------------------------#
+# FONCTION qui test la validite du GPS 
+def validite_SBG(line,seuil_SBG):
+    if float(line[8])<=seuil_SBG[1] and float(line[9])<=seuil_SBG[2] and float(line[10])<=seuil_SBG[3]:
+        return 1
+    else: 
+        return 0
+            
+#-----------------------------------------------------------------------------#
+# FONCTION qui test la validite du GPS 
+def validite_GPS_and_SBG(fichier,seuil_SBG): 
+    Nouvelle_liste=[]
+    data = open(fichier)
+    for line in data :
+        line = line.split()
+        if validite_GPS(line)==1:
+            if validite_SBG(line)==1:
+                Nouvelle_liste.append(line)
+    return Nouvelle_liste            
+                               
+#-----------------------------------------------------------------------------#
+# FONCTION qui applique un filtre median aux donnees du sonde
+def validite_SONDEUR_bathy2(liste_validee,nb_voisins):
+    Nouvelle_liste=[]
+    for i in range (len(liste_validee)):
+        # test : est ce qu'on est au bord 
+        if i<nb_voisins: 
+            Sondes = [float(k[10]) for k in liste_validee[0:1+2*nb_voisins]]
+        elif  i>=len(liste_validee)-nb_voisins :
+            Sondes = [float(k[10]) for k in liste_validee[-(2*nb_voisins+1):-1]]
+        else :
+            Sondes = [float(k[10]) for k in liste_validee[i-nb_voisins:i+nb_voisins+1]]          
+        Sondes.sort()
+        Index_i = Sondes.index(float(liste_validee[i]))
+        del Sondes[Index_i]
+        Shallowest_Sounding = Sondes[0]
+        Deepest_Sounding = Sondes[-1]
+        Lm = Deepest_Sounding-Shallowest_Sounding
+        Vect_Diff = [abs(float(liste_validee[i])-Deepest_Sounding),abs(float(liste_validee[i])-Shallowest_Sounding)]
+        # on teste le critere
+        if max(Vect_Diff)>=Lm:
+            Nouvelle_liste.append(liste_validee[i])    
+
+#-----------------------------------------------------------------------------#
+# FONCTION qui applique un filtre median aux donnees du sonde
+def validite_SONDEUR_moindrescarresPOND(liste_validee,nb_voisins):
+    print('en attente')
+
+#-----------------------------------------------------------------------------#
+# FONCTION qui ecrit un nouveau fichier
+def transformation_alitude_position_vrai(Liste_donnee_valide):   
+    
+    Liste_donne_transormee = []
+    
+    # Donnees utiles
+    SVP = 1500
+    levier_x = -0.06
+    levier_y = 0.145
+    levier_z = 0.206
+    Correction_ellipsoide = 49.04
+    biais_sondeur = 0
+    
+    for x in Liste_donnee_valide:
+        x[10] = (float(x[10])*11.3932*SVP/2000000+levier_z)-float(x[2])+Correction_ellipsoide+biais_sondeur
+        x[0] = float(x[0])-levier_x
+        x[1] = float(x[1])+levier_y
+        x[11] = float(x[11])
+
+    for i in range(len(Liste_donnee_valide)):
+        Liste_donne_transormee.append([x[0],x[1],x[10],x[11],0])
+
+#-----------------------------------------------------------------------------#
+# FONCTION qui ecrit un nouveau fichier
+#def string_nom_variable(variable):   
+#    for name,value in globals().items() :
+#        if value is variable :
+#            return name
+    
+#-----------------------------------------------------------------------------#
+# FONCTION qui ecrit un nouveau fichier
+def creation_fichier_sortie(fichier,liste_validee):
+    # Donnees fond (prof a environ 115m) 
+    # os.chdir(!!!attente de coherence!!!)
+    name=fichier[0:-4]
+    filename=name+'_valide.txt'
+    outfile=open(filename,'w')
+    for i in range(len(liste_validee)):
+        outfile.write('%12f %12f %7f %1f %1d\n'%(liste_validee[i][0],liste_validee[i][1],liste_validee[i][2],liste_validee[i][3],liste_validee[i][4]))
+    outfile.close()
+    return filename
+   
+
+
+        

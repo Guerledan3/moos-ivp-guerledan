@@ -18,10 +18,12 @@ add_definitions(${CMAKE_CXX_FLAGS})
 # List the subdirectories to build...
 #============================================================================
 ADD_SUBDIRECTORY(iSounder)
-ADD_SUBDIRECTORY(iGPS)
-ADD_SUBDIRECTORY(iInsSBG)
+#ADD_SUBDIRECTORY(iGPS)
+#ADD_SUBDIRECTORY(iInsSBG)
 #ADD_SUBDIRECTORY(pCustomLogger)
-#ADD_SUBDIRECTORY(pLatLongToLamb)
+#ADD_SUBDIRECTORY(pLatLon2LocalGrid)
+ADD_SUBDIRECTORY(pLatLongToLamb)
+ADD_SUBDIRECTORY(pLogLine)
 
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(lib_behavior_groupe3_guerledan)

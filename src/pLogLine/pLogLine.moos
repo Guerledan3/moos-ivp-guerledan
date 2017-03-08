@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pLogLine config block
+
+ProcessConfig = pLogLine
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

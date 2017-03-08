@@ -83,7 +83,7 @@ bool Sounder::Iterate()
   if(m_port_is_initialized)
   {
     stringstream sounder_ss;
-    sounder_ss << "TIME=" << MOOS::Time() << ",RANGE=" << getRange();
+    sounder_ss << "TIME=" << setprecision(14) << MOOS::Time() << ",RANGE=" << getRange();
     Notify("SOUNDER_RANGE", sounder_ss.str());
   }
   AppCastingMOOSApp::PostReport();

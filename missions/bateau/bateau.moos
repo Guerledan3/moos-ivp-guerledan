@@ -1,0 +1,154 @@
+Community = alpha
+ServerHost = localhost
+ServerPort = 9000
+
+LatOrigin = 48.3909425
+LongOrigin = -4.4346433
+MOOSTimeWarp = 10
+
+ProcessConfig = ANTLER
+{
+	Run = MOOSDB			@ NewConsole = false
+	Run = pNodeReporter		@ NewConsole = false
+	Run = uSimMarine		@ NewConsole = false
+	Run = uTimerScript		@ NewConsole = false ~uTimerScript1
+	Run = uTimerScript		@ NewConsole = false ~uTimerScript2
+	Run = pHelmIvP			@ NewConsole = false
+	Run = pMarineViewer		@ NewConsole = false
+	Run = pMarinePID		@ NewConsole = false
+}
+
+ProcessConfig = pMarineViewer
+{
+	tiff_file = moulin_blanc.tif
+	zoom = 1
+	appcast_viewable = true
+	trails_length = 1000
+	trails_connect_viewable = true
+	button_one = Lancement # LANCEMENT=true # MOOS_MANUAL_OVERRIDE=false
+	button_two = Fin_Inspection # FIN_INSPECTION=true
+}
+
+ProcessConfig = pNodeReporter
+{
+	platform_type = ship
+	platform_length = 10
+}
+
+ProcessConfig = uSimMarine
+{
+	start_pos = x=112, y=-128, heading=90
+	drift_x = 0
+	drift_y = 0
+	prefix = NAV
+}
+
+ProcessConfig = uJoystick
+{
+	  AppTick   = 0.001                                                                                          
+		                                                            
+	  DEVICE_NAME = /dev/input/js0
+                                 
+		                                                            
+	  INCREMENT = false                                             
+	  SCALE = 100                                                   
+		                                                            
+	  AXIS = 0                                                      
+	  SCALE_RATIO = 0.5                                             
+	  MOOS_DEST_VAR = DESIRED_SLIDE2                                
+		                                                            
+	  AXIS = 1                                                      
+	  SCALE_RATIO = 0.5                                             
+	  MOOS_DEST_VAR = DESIRED_THRUST                                
+		                                                            
+	  AXIS = 2                                                      
+	  SCALE_RATIO = 0.5                                             
+	  MOOS_DEST_VAR = DESIRED_RUDDER                                
+		                                                            
+	  AXIS = 3                                                      
+	  SCALE_RATIO = 0.5                                             
+	  MOOS_DEST_VAR = DESIRED_ELEVATOR                              
+		                                                            
+	  BUTTON = 1                                                    
+	  SCALE_RATIO = 0.5                                             
+	  MOOS_DEST_VAR = PUSHED_BUTTON_1                               
+		                                                            
+	  BUTTON = 2                                                    
+	  SCALE_RATIO = 0.5                                             
+	  MOOS_DEST_VAR = PUSHED_BUTTON_2   
+}
+
+ProcessConfig = uTimerScript1
+{
+	condition = NAV_X<400
+	appTick = 0.1
+	
+	randvar = varname=RANDOM_RUDDER, min=-50, max=50, key=at_reset
+	event = var=DESIRED_RUDDER, val=$[RANDOM_RUDDER]
+	event = var=DESIRED_THRUST, val=30
+	
+	event = var=DRIFT_X, val=0
+	event = var=DRIFT_Y, val=0
+	
+	reset_max = unlimited
+	reset_time = end
+}
+
+ProcessConfig = uTimerScript2
+{
+	condition = NAV_X>=400
+	appTick = 0.1
+	
+	randvar = varname=RANDOM_RUDDER, min=-50, max=50, key=at_reset
+	event = var=DESIRED_RUDDER, val=$[RANDOM_RUDDER]
+	event = var=DESIRED_THRUST, val=30
+	
+	event = var=DRIFT_X, val=1.2
+	event = var=DRIFT_Y, val=0.3
+	
+	reset_max = unlimited
+	reset_time = end
+}
+
+ProcessConfig = pMarinePID
+{
+  AppTick    = 20
+  CommsTick  = 20
+
+  verbose       = true
+  depth_control = false
+
+  // SIM_INSTABILITY = 20
+
+  // Yaw PID controller
+  yaw_pid_kp		 = 1.2
+  yaw_pid_kd		 = 0.0
+  yaw_pid_ki		 = 0.3
+  yaw_pid_integral_limit = 0.07
+
+  // Speed PID controller
+  speed_pid_kp		 = 1.0
+  speed_pid_kd		 = 0.0
+  speed_pid_ki		 = 0.0
+  speed_pid_integral_limit = 0.07
+
+  //MAXIMUMS
+  maxrudder    = 100
+  maxthrust    = 100
+
+  // A non-zero SPEED_FACTOR overrides use of SPEED_PID
+  // Will set DESIRED_THRUST = DESIRED_SPEED * SPEED_FACTOR
+  speed_factor = 20
+}
+
+ProcessConfig = pHelmIvP
+{
+	AppTick = 4
+	CommsTick = 4
+	
+	ivp_behavior_dir = /home/tonywelte/moos-ivp-extend/missions/bateau/
+	behaviors = moulin_blanc.bhv
+	
+	domain	= course:0:359:360
+	domain	= speed:0:5:20
+}

@@ -1,0 +1,71 @@
+initialize LANCEMENT = false
+initialize HORS_PORT = false
+initialize FIN_INSPECTION = false
+
+set MODE = ACTIVE{
+	LANCEMENT = true
+} INACTIVE
+
+set MODE = DEPART{
+	MODE = ACTIVE
+	HORS_PORT = false
+} 
+
+set MODE = INSPECTION{
+	MODE = ACTIVE
+	HORS_PORT = true
+	FIN_INSPECTION = false
+}
+
+set MODE = RETOUR{
+	MODE = ACTIVE
+	HORS_PORT = true
+	FIN_INSPECTION = true
+}
+
+Behavior = BHV_Waypoint
+{
+	name = depart
+	pwt = 100
+	condition = MODE==DEPART
+	
+	capture_radius = 3
+	capture_line = false
+	points = pts={195,-128:300,-18:360,115:600,115}
+	slip_radius = 15
+	speed = 5
+	
+	endflag = HORS_PORT=true
+}
+
+Behavior = BHV_Waypoint
+{
+	name = retour
+	pwt = 100
+	condition = MODE==RETOUR
+	
+	capture_radius = 3
+	capture_line = false
+	points = pts={600,115:360,115:300,-18:195,-128:112,-128}
+	slip_radius = 15
+	speed = 5
+	
+}
+
+Behavior = BHV_StationKeep
+{
+	name = inspection
+	pwt = 100
+	condition = MODE==INSPECTION
+	
+	station_pt = 800,0
+	inner_radius = 10.0
+	outer_radius = 30.0
+	hibernation_radius = 60.0
+	outer_speed = 8.0
+	transit_speed = 5.5
+	
+	duration = 300
+	
+	endflag = FIN_INSPECTION=true	
+}

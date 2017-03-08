@@ -43,15 +43,17 @@ class InsSBG : public AppCastingMOOSApp
 
  private: // State variables
  	float roll, pitch, yaw;
+  float e_roll, e_pitch, e_yaw;
   float latitude, longitude, altitude;
 
- 	bool new_ekf, new_nav, new_time;
+ 	bool new_ekf, new_nav, new_time, new_std;
   float year, month, day, hour, minute, second, nanoSecond, gpsTimeOfWeek;
 
  private:
   int newPose(string pose);
  	static SbgErrorCode onLogReceived(SbgEComHandle *pHandle, SbgEComCmdId logCmd, const SbgBinaryLogData *pLogData, void *pUserArg);
   bool Notify_attitude(float *roll, float *pitch, float *yaw);
+  bool Notify_attitude_std(float *e_roll, float *e_pitch, float *e_yaw);
   bool Notify_pose(float *lat, float *lon, float *altitude);
 };
 

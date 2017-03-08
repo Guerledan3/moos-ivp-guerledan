@@ -12,8 +12,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-#define nomFichierLignes "lignes"
-#define nomFichierLog "log"
+#define nomFichierLignes "pair"
 #define TAILLE_LECTURE 50
 
 using namespace std;
@@ -26,9 +25,10 @@ Main::Main()
    // Mode 0 = mission non lancée ; 1 = levé ; 2 = Quality Check
    mode = 0;
    motif_courant = 1;
-   paire_ligne_courante = 1;
+   paire_ligne_courante = 0;
    ligne_courante = 0.0;  // dans la paire de lignes : 0 = aucune ligne faite ;
 			// 1 = ligne 1 faite ; 2 = lignes 1 et 2 faites
+   tout_a_refaire=false;
 
    ligne1="0,0";
    ligne2="0,0";
@@ -38,12 +38,21 @@ Main::Main()
    logline="";
 
    fin_leve = false;
-   retour_qc = 0.0; // provisoire : 0 = mode QC non-activé
-		    // 1 : à refaire
-		    // 2 : valide et cohérent
+   retour_qc = 0.0; // k1 = 0 ou 1, k2 =, k3 =, k4 =
+                    // 0 = ok ; 1 = à refaire
 
    current_time = 0.0;
    lancement = false;
+
+   retry=""; // messages d'erreur renvoyé par l'algo de cohérence
+
+   linelogged="";
+   last_validate="";
+
+   K1=0;
+   K2=0;
+   K3=0;
+   K4=0;
 }
 
 
@@ -87,14 +96,18 @@ void Main::modeQC(){
 	// nom MoosVar nom fichier, numéros nécessaire pour que 
         // les algo python écrives les nouveaux fichiers sans outliers
 
-	char sligne[50];
+	/*char sligne[50];
         sprintf(sligne,"%d", paire_ligne_courante);
         spaire=sligne;
 
 	string nomFichier = nomFichierLog+spaire+".txt";
 	string cheminFichier="/home/guerledan3/moos-ivp-extend/missions/guerledan_mars_test/logs/pCustomLogger/"+nomFichier;
 
-	Notify("FICHIER_A_CHECKER",cheminFichier);
+	Notify("FICHIER_A_CHECKER",cheminFichier);*/
+
+
+	paire_ligne_courante +=1;
+        Notify("LIGNE_COURANTE",0.0);
 }
 
 //---------------------------------------------------------
@@ -162,12 +175,38 @@ bool Main::OnNewMail(MOOSMSG_LIST &NewMail)
 	}
      }
      else if (key == "RETOUR_QC"){
-	if(msg.m_dfVal==0.0){ // désactivé
+
+	MOOSValFromString(K1,msg.GetString(),"K1");
+	MOOSValFromString(K2,msg.GetString(),"K2");
+	MOOSValFromString(K3,msg.GetString(),"K3");
+	MOOSValFromString(K4,msg.GetString(),"K4");
+
+	retour_qc = msg.GetString();
+
+	
+	if(K1==0 && K2==0 && K3==0 && K4==0){ // tout est ok
+
+	}
+	else if(K1==1 && K2==1 && K3==0 && K4==0){ 
+
+	}
+	else if(K1==0 && K2==0 && K3==1 && K4==1){ 
+
+	}
+	else if(K1==1 && K2==1 && K3==1 && K4==1){ // tout est à refaire
+ 
+	}
+
+
+
+
+
+
+	/*if(msg.m_dfVal==0.0){ // désactivé
 
 	}
 	else if(msg.m_dfVal==1.0){ // à refaire
 		if(retour_qc!=1.0){
-			// à faire : déplacer le fichier de log qui ne va pas dans un fichier d'archivage
 			
 			Notify("LIGNE_COURANTE",0.0); // pour repasser au mode levé
 		}
@@ -181,7 +220,7 @@ bool Main::OnNewMail(MOOSMSG_LIST &NewMail)
 		}
 	}
 
-	retour_qc = msg.m_dfVal;
+	*/
      }
      else if (key == "DB_UPTIME"){
 	current_time = msg.m_dfVal;
@@ -197,7 +236,7 @@ bool Main::OnNewMail(MOOSMSG_LIST &NewMail)
 		if(ligne_courante==0.0){
 			ligne_courante=1.0;
 			Notify("WAYPT_UPDATE","name="+spaire+"_2 # points="+ligne2+" # endflag = LIGNE_COURANTE = 2 # endflag = LOGLINE=stop");
-		}
+			}
 	}
 	else if(msg.m_dfVal==2.0){
 		if(ligne_courante==1.0){
@@ -222,6 +261,32 @@ bool Main::OnNewMail(MOOSMSG_LIST &NewMail)
      }
      else if (key == "LOGLINE"){
 	logline = msg.GetString(); 
+     }
+     else if (key == "RETRY"){
+	retry = msg.GetString(); 
+     }
+     else if (key == "LINELOGGED"){
+	linelogged = msg.GetString();
+        Notify("VALIDE_FILE",linelogged);
+     }
+     else if (key == "LAST_VALIDATE"){
+	last_validate = msg.GetString();
+        char snum[3]="";
+	if(last_validate.size()==36){ // numéro de la paire de lignes est à 1 chiffre
+		snum[0]=last_validate[23];
+        	num_last_validate=atoi(snum);
+	}
+	else if(last_validate.size()==37){ // numéro de la paire de lignes est à 2 chiffres
+		snum[0]=last_validate[23];
+		snum[1]=last_validate[24];
+        	num_last_validate=atoi(snum);
+	}
+	else if(last_validate.size()==38){ // numéro de la paire de lignes est à 3 chiffres
+		snum[0]=last_validate[23];
+		snum[1]=last_validate[24];
+		snum[2]=last_validate[25];
+        	num_last_validate=atoi(snum);
+	}	
      }
      else if(key != "APPCAST_REQ") // handle by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
@@ -304,6 +369,9 @@ void Main::registerVariables()
   Register("LIGNE_COURANTE", 0);
   Register("WPT_INDEX", 0);
   Register("LOGLINE", 0);
+  Register("RETRY", 0);
+  Register("LINELOGGED", 0);
+  Register("LAST_VALIDATE", 0);
 }
 
 
@@ -338,8 +406,8 @@ bool Main::buildReport()
   char sfinleve[50];
   sprintf(sfinleve,"%d", fin_leve);
 
-  char sretourqc[50];
-  snprintf(sretourqc, 50, "%f", retour_qc);
+  char snum_last_validate[50];
+  sprintf(snum_last_validate,"%d", num_last_validate);
 
   m_msgs << "\n\nMode : ";
   m_msgs << smode;
@@ -363,8 +431,16 @@ bool Main::buildReport()
   m_msgs << slancement;
   m_msgs << "\nFin Levé (bool) : ";
   m_msgs << sfinleve;
+  m_msgs << "\nLinelogged : ";
+  m_msgs << linelogged;
+  m_msgs << "\n\nLast Validate : ";
+  m_msgs << last_validate;
+  m_msgs << "\n\nNuméro Last Validate : ";
+  m_msgs << snum_last_validate;
   m_msgs << "\nRetour QC : ";
-  m_msgs << sretourqc;
+  m_msgs << retour_qc;
+  m_msgs << "\nMessage cohérence : ";
+  m_msgs << retry;
 
   return(true);
 }

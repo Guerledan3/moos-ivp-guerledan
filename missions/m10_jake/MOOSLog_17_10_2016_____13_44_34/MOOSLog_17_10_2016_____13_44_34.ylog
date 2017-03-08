@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./MOOSLog_17_10_2016_____13_44_34/MOOSLog_17_10_2016_____13_44_34.ylog
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART                1476704674.1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0.8519421  MOOS_DEBUG           pMarinePID           YAW_PID_KP not found in Mission File 
+0.8520639  MOOS_DEBUG           pMarinePID           YAW_PID_KD not found in Mission File 
+0.852176   MOOS_DEBUG           pMarinePID           YAW_PID_KI not found in Mission File 
+0.8523841  MOOS_DEBUG           pMarinePID           YAW_PID_INTEGRAL_LIMIT not found in Mission File 
+0.852493   MOOS_DEBUG           pMarinePID           MAXRUDDER not found in Mission File 
+0.8525119  MOOS_DEBUG           pMarinePID           ** NEW CONTROLLER GAINS ARE ** 
+0.8525269  MOOS_DEBUG           pMarinePID           YAW_PID_KP             = 0.000 
+0.8525381  MOOS_DEBUG           pMarinePID           YAW_PID_KD             = 0.000 
+0.8525491  MOOS_DEBUG           pMarinePID           YAW_PID_KI             = 0.000 
+0.85256    MOOS_DEBUG           pMarinePID           YAW_PID_INTEGRAL_LIMIT = 0.000 
+0.8525701  MOOS_DEBUG           pMarinePID           MAXRUDDER              = 100.000 
+0.8526831  MOOS_DEBUG           pMarinePID           SPEED_PID_KP not found in Mission File 
+0.8527939  MOOS_DEBUG           pMarinePID           SPEED_PID_KD not found in Mission File 
+0.852927   MOOS_DEBUG           pMarinePID           SPEED_PID_KI not found in Mission File 
+0.853081   MOOS_DEBUG           pMarinePID           SPEED_PID_INTEGRAL_LIMIT not found in Mission File 
+0.8532009  MOOS_DEBUG           pMarinePID           MAXTHRUST not found in Mission File 
+0.8532109  MOOS_DEBUG           pMarinePID           SPEED_PID_KP           = 0.000 
+0.8532181  MOOS_DEBUG           pMarinePID           SPEED_PID_KD           = 0.000 
+0.853224   MOOS_DEBUG           pMarinePID           SPEED_PID_KI           = 0.000 
+0.853231   MOOS_DEBUG           pMarinePID           SPEED_PID_INTEGRAL_LIMIT = 0.000 
+0.8532369  MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 

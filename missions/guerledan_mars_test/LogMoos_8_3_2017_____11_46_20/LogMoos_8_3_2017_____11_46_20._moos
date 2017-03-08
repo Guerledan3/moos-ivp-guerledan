@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./LogMoos_8_3_2017_____11_46_20/LogMoos_8_3_2017_____11_46_20._moos
+%% FILE OPENED ON  Thu Jan  1 01:00:00 1970
+%% LOGSTART               1488969979.52
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ServerHost = localhost
+ServerPort = 9000
+Community  = Guerledan3
+
+LatOrigin  = 48.198334
+LongOrigin = -3.014402
+
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 400
+
+  Run = MOOSDB          @ NewConsole = false
+
+  // Processes
+  Run = pHelmIvP        @ NewConsole = false
+  Run = pMain   	@ NewConsole = false
+  Run = pEchoVar                  @ NewConsole = false
+  Run = pLatLongToLamb                  @ NewConsole = false
+  
+
+  // Interface Homme Machine
+
+  // Sensor
+  Run = iInsSBG               @ NewConsole = false
+  Run = iSounder              @ NewConsole = false
+  Run = iGPS                  @ NewConsole = false
+
+  // Logger
+  Run = pLogger               @ NewConsole = false
+  Run = pLogLine              @ NewConsole = false
+
+  // Non Essential
+  Run = uMS             @ NewConsole = false
+  Run = pNodeReporter   @ NewConsole = false
+  Run = pMarineViewer   @ NewConsole = false
+}
+
+ProcessConfig = pMain
+{
+  AppTick    = 4
+  CommsTick  = 4
+
+
+}
+
+ProcessConfig = pLatLongToLamb
+{
+  AppTick    = 25
+  CommsTick  = 25
+
+
+}
+
+ProcessConfig = pEchoVar
+{
+	AppTick = 4
+	CommsTick = 4
+
+	echo = GPS_SPEED -> NAV_SPEED
+}
+
+ProcessConfig = pHelmIvP
+{
+  AppTick    = 4
+  CommsTick  = 4
+
+  behaviors  = guerledan.bhv
+  domain     = course:0:359:360
+  domain     = speed:0:4:41
+
+  //ivp_behavior_dir = ~/moos-ivp-extend/lib
+  //bhv_dir_not_found_ok=true
+}
+
+ProcessConfig = pMarineViewer
+{
+  AppTick   = 25
+  CommsTick = 4
+
+  tiff_file = guerledan.tif
+  zoom      = 1.0
+
+  appcast_viewable = true
+
+  // les paramètres par défaut sont conservés
+  // pour plus d'informations, entrer pMarineViewer -e
+  // ou lire la documentation en ligne de l'application
+
+  trails_length = 1000
+  trails_connect_viewable = true
+
+  button_one = Lancement # LANCEMENT=true # MOOS_MANUAL_OVERRIDE=false
+  button_two = Arrêt # LANCEMENT=false # MOOS_MANUAL_OVERRIDE=false
+
+  scope = 
+}
+
+ProcessConfig = pNodeReporter
+{
+  AppTick   = 4
+  CommsTick = 4
+                         
+  platform_type = ship // détermine l'apparence du robot dans la vue
+  platform_length = 10 // m
+}
+
+ProcessConfig = iSounder
+{
+  AppTick   = 25
+  CommsTick = 25
+
+  SERIAL_PORT = /dev/sounder
+}
+
+ProcessConfig = iInsSBG
+{
+   AppTick   = 25
+   CommsTick = 25
+
+   UART_PORT = /dev/sbg
+   UART_BAUD_RATE = 115200
+}
+
+ProcessConfig = iGPS
+{
+  AppTick   = 25
+  CommsTick = 25
+
+  SERIAL_PORT = /dev/gps
+  UART_BAUD_RATE = 115200
+}
+
+ProcessConfig = pLogger
+{
+  AppTick = 25
+  CommsTick = 25
+  File = LogMoos
+  PATH = /home/Log/
+  SyncLog = true @ 0.2
+  AsyncLog = true
+  WildCardLogging = false
+  FileTimeStamp = true
+
+  Log = GPS @ 0
+  Log = GPS_SIG @ 0
+  Log = GPS_FIX @ 0
+  Log = GPS_SPEED @ 0
+  Log = GPS_HEADING @ 0
+  Log = GPS_RAW_NMEA @ 0
+  Log = INS_EULER @ 0
+  Log = INS_EEULER @ 0
+  Log = INS_NAV @ 0
+  Log = SOUNDER_RANGE @ 0
+  Log = GPS_NAV @ 0
+  Log = GPS_NAV_LAMB @ 0
+  Log = INS_NAV_LAMB @ 0
+  Log = NAV_X @ 0
+  Log = NAV_Y @ 0
+  Log = NAV_HEADING @ 0
+  Log = LOGLINE @ 0
+  Log = LINELOGGED @ 0
+  Log = Sounder_RANGE @ 0
+  
+
+}
+
+ProcessConfig = pLogLine
+{
+  AppTick = 25
+  CommsTick = 25
+
+  SAVE_FOLDER = /home/guerledan3/Save
+  ARCHIVE_FOLDER = /home/guerledan3/Archive
+
+}
+

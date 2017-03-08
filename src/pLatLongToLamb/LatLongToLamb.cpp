@@ -14,16 +14,6 @@
 
 using namespace std;
 
-double m_lat;
-double m_lon;
-double m_time;
-bool m_newlat = false;
-bool m_newlon = false;
-
-double ref_lat = 0.0;
-double ref_lon = 0.0;
-double std_par1 = 0.0;
-double std_par2 = 0.0;
 projPJ m_Platlon;
 projPJ m_Plambert;
 
@@ -58,30 +48,47 @@ bool LatLongToLamb::OnNewMail(MOOSMSG_LIST &NewMail)
     bool   mstr  = msg.IsString();
 #endif
 
-     if(key == "NAV_LAT"){
-      m_lat = msg.GetDouble();
-      m_time = msg.GetTime();
-      m_newlat = true;
+     if(key == "INS_NAV"){
+      string str = msg.GetString();
+      string time;
+      double lat, lon, ele;
+      MOOSValFromString(time, str, "TIME");
+      MOOSValFromString(lat, str, "LAT");
+      MOOSValFromString(lon, str, "LON");
+      MOOSValFromString(ele, str, "ALT");
+      lat *= DEG_TO_RAD;
+      lon *= DEG_TO_RAD;
+      pj_transform(m_Platlon, m_Plambert, 1, 1, &lon, &lat, NULL);
+      string msg_str;
+      msg_str += "TIME=" + time + ",";
+      msg_str += "X=" + doubleToString(lon, 6) + ",";
+      msg_str += "Y=" + doubleToString(lat, 6) + ",";
+      msg_str += "Z=" + doubleToString(ele, 6);
+      Notify("INS_NAV_LAMB", msg_str);
      }
-     else if (key == "NAV_LONG")
+     else if (key == "GPS_NAV")
      {
-      m_lon = msg.GetDouble();
-      m_time = msg.GetTime();
-      m_newlon = true;
+      string str = msg.GetString();
+      string time;
+      double lat, lon, ele;
+      MOOSValFromString(time, str, "TIME");
+      MOOSValFromString(lat, str, "LAT");
+      MOOSValFromString(lon, str, "LON");
+      MOOSValFromString(ele, str, "ALT");
+      lat *= DEG_TO_RAD;
+      lon *= DEG_TO_RAD;
+      pj_transform(m_Platlon, m_Plambert, 1, 1, &lon, &lat, NULL);
+      string msg_str;
+      msg_str += "TIME=" + time + ",";
+      msg_str += "X=" + doubleToString(lon, 6) + ",";
+      msg_str += "Y=" + doubleToString(lat, 6) + ",";
+      msg_str += "Z=" + doubleToString(ele, 6);
+      Notify("GPS_NAV_LAMB", msg_str);
+      Notify("NAV_X", lon-253559.1325078258);
+      Notify("NAV_Y", lat-6805674.85861476);
      }
      else if(key != "APPCAST_REQ") // handle by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
-
-     if(m_newlon & m_newlon){
-      double x = -4.34*DEG_TO_RAD;
-      double y = 48.42*DEG_TO_RAD;
-
-      pj_transform(m_Platlon, m_Plambert, 1, 1, &x, &y, NULL);
-      printf("%f %f\n", x, y);
-
-      Notify("LAMBERT_X", x);
-      Notify("LAMBERT_Y", y);
-     }
    }
 	
    return(true);
@@ -129,12 +136,6 @@ bool LatLongToLamb::OnStartUp()
     string value = line;
 
     bool handled = false;
-    if(param == "FOO") {
-      handled = true;
-    }
-    else if(param == "BAR") {
-      handled = true;
-    }
 
     if(!handled)
       reportUnhandledConfigWarning(orig);
@@ -152,8 +153,8 @@ void LatLongToLamb::registerVariables()
 {
   AppCastingMOOSApp::RegisterVariables();
   // Register("FOOBAR", 0);
-  Register("NAV_LAT", 0);
-  Register("NAV_LONG", 0);
+  Register("INS_NAV", 0);
+  Register("GPS_NAV", 0);
 }
 
 
@@ -162,16 +163,6 @@ void LatLongToLamb::registerVariables()
 
 bool LatLongToLamb::buildReport() 
 {
-  m_msgs << "============================================ \n";
-  m_msgs << "File:                                        \n";
-  m_msgs << "============================================ \n";
-
-  ACTable actab(4);
-  actab << "Alpha | Bravo | Charlie | Delta";
-  actab.addHeaderLines();
-  actab << "one" << "two" << "three" << "four";
-  m_msgs << actab.getFormattedString();
-
   return(true);
 }
 

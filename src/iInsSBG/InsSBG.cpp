@@ -23,12 +23,17 @@ InsSBG::InsSBG()
   pitch = 0.0;
   roll = 0.0;
 
+  e_yaw = 0.0;
+  e_pitch = 0.0;
+  e_roll = 0.0;  
+
   longitude = 0.0;
   latitude = 0.0;
   altitude = 0.0;
 
   new_ekf = 0;
   new_nav = 0;
+  new_std = 0;
 }
 
 InsSBG::~InsSBG()
@@ -98,8 +103,8 @@ bool InsSBG::Iterate()
       new_ekf = false;
       // Notify("NAV_INS_ROLL", roll);
       // Notify("NAV_INS_PITCH", pitch);
-      // Notify("NAV_INS_YAW", yaw);
-      Notify_attitude(&roll, &pitch, &yaw);
+      Notify("NAV_HEADING", yaw*180.0/3.1415);
+      Notify_attitude( &roll, &pitch, &yaw);
     }
     if(new_nav){
       new_nav = false;
@@ -107,6 +112,10 @@ bool InsSBG::Iterate()
       // Notify("NAV_INS_LONG", longitude);
       // Notify("NAV_INS_DEPTH", -altitude);
       Notify_pose(&latitude, &longitude, &altitude);
+    }
+    if(new_std){
+      new_std = false;
+      Notify_attitude_std(&e_roll, &e_pitch, &e_yaw);
     }
     if(new_time){
       new_time = false;
@@ -301,8 +310,15 @@ void InsSBG::registerVariables()
 //------------------------------------------------------------
 // Procedure: buildReport()
 
-bool InsSBG::buildReport() 
+bool InsSBG::buildReport()
 {
+  ACTable actab(6);
+  actab << "Lat | Long | Ele | Roll | Pitch | Yaw";
+  actab.addHeaderLines();
+
+  actab << latitude << longitude << altitude << roll << pitch << yaw;
+  m_msgs << actab.getFormattedString();
+
   return(true);
 }
 
@@ -323,6 +339,12 @@ SbgErrorCode InsSBG::onLogReceived(SbgEComHandle *pHandle, SbgEComCmdId logCmd, 
       pInsSBG->latitude  = pLogData->ekfNavData.position[0];
       pInsSBG->longitude = pLogData->ekfNavData.position[1];
       pInsSBG->altitude  = pLogData->ekfNavData.position[2];
+      break;
+    case SBG_ECOM_LOG_EKF_QUAT:
+      pInsSBG->new_std = true;
+      pInsSBG->e_roll    = pLogData->ekfQuatData.eulerStdDev[0];
+      pInsSBG->e_pitch   = pLogData->ekfQuatData.eulerStdDev[1];
+      pInsSBG->e_yaw     = pLogData->ekfQuatData.eulerStdDev[2];
       break;
     case SBG_ECOM_LOG_UTC_TIME:
       pInsSBG->new_time = true;
@@ -381,6 +403,15 @@ bool InsSBG::Notify_attitude(float *roll, float *pitch, float *yaw){
   msg += "PITCH=" + doubleToString(*pitch, 6) + ",";
   msg += "YAW=" + doubleToString(*yaw, 6);
   Notify("INS_EULER", msg);
+  return true;
+}
+bool InsSBG::Notify_attitude_std(float *e_roll, float *e_pitch, float *e_yaw){
+  string msg;
+  msg += "TIME=" + doubleToString(MOOS::Time()) + ",";
+  msg += "EROLL=" + doubleToString(*e_roll, 6) + ",";
+  msg += "EPITCH=" + doubleToString(*e_pitch, 6) + ",";
+  msg += "EYAW=" + doubleToString(*e_yaw, 6);
+  Notify("INS_EEULER", msg);
   return true;
 }
 bool InsSBG::Notify_pose(float *lat, float *lon, float *altitude){

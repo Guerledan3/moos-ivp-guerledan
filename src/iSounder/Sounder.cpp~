@@ -81,8 +81,11 @@ bool Sounder::Iterate()
   AppCastingMOOSApp::Iterate();
 
   if(m_port_is_initialized)
-    Notify("Sounder_RANGE", getRange());
-
+  {
+    stringstream sounder_ss;
+    sounder_ss << "TIME=" << MOOS::Time() << ",RANGE=" << getRange();
+    Notify("SOUNDER_RANGE", sounder_ss.str());
+  }
   AppCastingMOOSApp::PostReport();
   return true;
 }
@@ -179,7 +182,7 @@ bool Sounder::initSerialPort()
     m_serial_port = CMOOSLinuxSerialPort();
   #endif
 
-  m_port_is_initialized = m_serial_port.Create((char*)m_port_name.c_str());
+  m_port_is_initialized = m_serial_port.Create((char*)m_port_name.c_str(), 4800);
   return m_port_is_initialized;
 }
 

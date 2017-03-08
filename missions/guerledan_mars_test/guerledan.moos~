@@ -21,11 +21,21 @@ ProcessConfig = ANTLER
   Run = pNodeReporter   @ NewConsole = false
   Run = pHelmIvP        @ NewConsole = false
   Run = pMain   	@ NewConsole = false
+  Run = pEchoVar   	@ NewConsole = false
   
 
   // Interface Homme Machine
   Run = uMS             @ NewConsole = false
   Run = pMarineViewer   @ NewConsole = false
+}
+
+ProcessConfig = pEchoVar
+{
+	AppTick = 4
+	CommsTick = 4
+
+	// réécriture de VARIABLE_1 dans VARIABLE_2
+	echo = WPT_INDEX -> ESSAY
 }
 
 ProcessConfig = pMain
@@ -96,7 +106,7 @@ ProcessConfig = pMarineViewer
   trails_connect_viewable = true
 
   button_one = Lancement # LANCEMENT=true # MOOS_MANUAL_OVERRIDE=false
-  
+  button_two = Arrêt # LANCEMENT=false # MOOS_MANUAL_OVERRIDE=false
 }
 
 ProcessConfig = uSimMarine

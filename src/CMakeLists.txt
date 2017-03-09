@@ -28,7 +28,6 @@ ADD_SUBDIRECTORY(pLogLine)
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(lib_behavior_groupe3_guerledan)
 ADD_SUBDIRECTORY(pMain)
-ADD_SUBDIRECTORY(uPlayBack)
 
 ##############################################################################
 #                           END of CMakeLists.txt
